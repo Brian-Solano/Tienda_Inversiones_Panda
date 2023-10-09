@@ -41,20 +41,25 @@ namespace Tienda_Inversiones_Panda
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnNuevoP = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
             // 
-            this.btnatras.Location = new System.Drawing.Point(91, 350);
+            this.btnatras.Location = new System.Drawing.Point(651, 353);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(137, 58);
             this.btnatras.TabIndex = 0;
             this.btnatras.Text = "ATRAS";
             this.btnatras.UseVisualStyleBackColor = true;
+            this.btnatras.Click += new System.EventHandler(this.btnatras_Click);
             // 
             // btnIngre
             // 
-            this.btnIngre.Location = new System.Drawing.Point(481, 350);
+            this.btnIngre.Location = new System.Drawing.Point(199, 353);
             this.btnIngre.Name = "btnIngre";
             this.btnIngre.Size = new System.Drawing.Size(137, 58);
             this.btnIngre.TabIndex = 1;
@@ -142,11 +147,40 @@ namespace Tienda_Inversiones_Panda
             this.textBox4.Size = new System.Drawing.Size(63, 20);
             this.textBox4.TabIndex = 11;
             // 
+            // btnNuevoP
+            // 
+            this.btnNuevoP.Location = new System.Drawing.Point(22, 353);
+            this.btnNuevoP.Name = "btnNuevoP";
+            this.btnNuevoP.Size = new System.Drawing.Size(137, 58);
+            this.btnNuevoP.TabIndex = 12;
+            this.btnNuevoP.Text = "NUEVO";
+            this.btnNuevoP.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(382, 353);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(137, 58);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(565, 35);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(223, 144);
+            this.dataGridView1.TabIndex = 14;
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnNuevoP);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox3);
@@ -161,6 +195,8 @@ namespace Tienda_Inversiones_Panda
             this.Controls.Add(this.btnatras);
             this.Name = "Registo_de_Productos";
             this.Text = "Registo_de_Productos";
+            this.Load += new System.EventHandler(this.Registo_de_Productos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +216,8 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button btnNuevoP;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
