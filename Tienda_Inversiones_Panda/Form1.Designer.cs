@@ -1,7 +1,7 @@
 ﻿
 namespace Tienda_Inversiones_Panda
 {
-    partial class Form1
+    partial class Login
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -91,7 +91,7 @@ namespace Tienda_Inversiones_Panda
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
             // 
-            // Form1
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +102,8 @@ namespace Tienda_Inversiones_Panda
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.lblContra);
             this.Controls.Add(this.lblUser);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Login";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

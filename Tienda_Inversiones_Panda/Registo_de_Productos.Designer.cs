@@ -36,11 +36,11 @@ namespace Tienda_Inversiones_Panda
             this.lblFechaV = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblProductoIngre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDistri = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtIngresarProducto = new System.Windows.Forms.TextBox();
             this.btnNuevoP = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -65,6 +65,7 @@ namespace Tienda_Inversiones_Panda
             this.btnIngre.TabIndex = 1;
             this.btnIngre.Text = "INGRESAR";
             this.btnIngre.UseVisualStyleBackColor = true;
+            this.btnIngre.Click += new System.EventHandler(this.btnIngre_Click);
             // 
             // lblNombreP
             // 
@@ -111,41 +112,41 @@ namespace Tienda_Inversiones_Panda
             this.lblProductoIngre.TabIndex = 6;
             this.lblProductoIngre.Text = "PRODUCTO A INGRESAR";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(341, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNombre.Location = new System.Drawing.Point(341, 35);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(216, 20);
+            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtDistri
             // 
-            this.textBox2.Location = new System.Drawing.Point(341, 103);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtDistri.Location = new System.Drawing.Point(341, 103);
+            this.txtDistri.Name = "txtDistri";
+            this.txtDistri.Size = new System.Drawing.Size(216, 20);
+            this.txtDistri.TabIndex = 8;
             // 
-            // textBox3
+            // txtPrecio
             // 
-            this.textBox3.Location = new System.Drawing.Point(341, 222);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(216, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtPrecio.Location = new System.Drawing.Point(341, 222);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(216, 20);
+            this.txtPrecio.TabIndex = 9;
             // 
-            // dateTimePicker1
+            // dtmFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(341, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dtmFecha.Location = new System.Drawing.Point(341, 160);
+            this.dtmFecha.Name = "dtmFecha";
+            this.dtmFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtmFecha.TabIndex = 10;
             // 
-            // textBox4
+            // txtIngresarProducto
             // 
-            this.textBox4.Location = new System.Drawing.Point(341, 286);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(63, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtIngresarProducto.Location = new System.Drawing.Point(341, 286);
+            this.txtIngresarProducto.Name = "txtIngresarProducto";
+            this.txtIngresarProducto.Size = new System.Drawing.Size(63, 20);
+            this.txtIngresarProducto.TabIndex = 11;
             // 
             // btnNuevoP
             // 
@@ -155,6 +156,7 @@ namespace Tienda_Inversiones_Panda
             this.btnNuevoP.TabIndex = 12;
             this.btnNuevoP.Text = "NUEVO";
             this.btnNuevoP.UseVisualStyleBackColor = true;
+            this.btnNuevoP.Click += new System.EventHandler(this.btnNuevoP_Click);
             // 
             // btnEliminar
             // 
@@ -164,6 +166,7 @@ namespace Tienda_Inversiones_Panda
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // dataGridView1
             // 
@@ -181,11 +184,11 @@ namespace Tienda_Inversiones_Panda
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevoP);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIngresarProducto);
+            this.Controls.Add(this.dtmFecha);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtDistri);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblProductoIngre);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblFechaV);
@@ -211,11 +214,11 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Label lblFechaV;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblProductoIngre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDistri;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.DateTimePicker dtmFecha;
+        private System.Windows.Forms.TextBox txtIngresarProducto;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dataGridView1;

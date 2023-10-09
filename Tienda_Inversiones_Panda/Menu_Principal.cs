@@ -24,7 +24,9 @@ namespace Tienda_Inversiones_Panda
 
         private void btnIngresarU_Click(object sender, EventArgs e)
         {
-
+            Form formulario = new Login();
+            this.Hide();
+            formulario.Show();
         }
 
         private void btnIngresoP_Click(object sender, EventArgs e)

@@ -12,11 +12,11 @@ using MySql.Data.MySqlClient;
 
 namespace Tienda_Inversiones_Panda
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         public string cadena_conexion = @"Database=Tienda_Inversiones_Panda; Data Source=localhost;User id = root;Password=Huaweiz5";
        
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
