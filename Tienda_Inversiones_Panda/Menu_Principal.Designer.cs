@@ -84,6 +84,7 @@ namespace Tienda_Inversiones_Panda
             this.btnIngresoP.TabIndex = 5;
             this.btnIngresoP.Text = "INGRESO DE PRODUCTOS";
             this.btnIngresoP.UseVisualStyleBackColor = true;
+            this.btnIngresoP.Click += new System.EventHandler(this.btnIngresoP_Click);
             // 
             // btnFacturacion
             // 

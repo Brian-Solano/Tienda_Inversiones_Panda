@@ -26,5 +26,12 @@ namespace Tienda_Inversiones_Panda
         {
 
         }
+
+        private void btnIngresoP_Click(object sender, EventArgs e)
+        {
+            Registo_de_Productos RP = new Registo_de_Productos();
+            RP.Show();
+            this.Hide();
+        }
     }
 }
