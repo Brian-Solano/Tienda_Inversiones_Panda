@@ -33,10 +33,10 @@ namespace Tienda_Inversiones_Panda
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalir2 = new System.Windows.Forms.Button();
-            this.btnIngresarU = new System.Windows.Forms.Button();
             this.btnIngresoP = new System.Windows.Forms.Button();
             this.btnFacturacion = new System.Windows.Forms.Button();
             this.btnRegistroF = new System.Windows.Forms.Button();
+            this.btnIngresarU = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblInicio
@@ -76,15 +76,6 @@ namespace Tienda_Inversiones_Panda
             this.btnSalir2.UseVisualStyleBackColor = true;
             this.btnSalir2.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnIngresarU
-            // 
-            this.btnIngresarU.Location = new System.Drawing.Point(635, 57);
-            this.btnIngresarU.Name = "btnIngresarU";
-            this.btnIngresarU.Size = new System.Drawing.Size(102, 58);
-            this.btnIngresarU.TabIndex = 4;
-            this.btnIngresarU.Text = "INGRESAR OTRO USUARIO";
-            this.btnIngresarU.UseVisualStyleBackColor = true;
-            // 
             // btnIngresoP
             // 
             this.btnIngresoP.Location = new System.Drawing.Point(39, 324);
@@ -112,6 +103,16 @@ namespace Tienda_Inversiones_Panda
             this.btnRegistroF.Text = "REGISTRO DE FACTURAS";
             this.btnRegistroF.UseVisualStyleBackColor = true;
             // 
+            // btnIngresarU
+            // 
+            this.btnIngresarU.Location = new System.Drawing.Point(635, 57);
+            this.btnIngresarU.Name = "btnIngresarU";
+            this.btnIngresarU.Size = new System.Drawing.Size(102, 58);
+            this.btnIngresarU.TabIndex = 4;
+            this.btnIngresarU.Text = "INGRESAR OTRO USUARIO";
+            this.btnIngresarU.UseVisualStyleBackColor = true;
+            this.btnIngresarU.Click += new System.EventHandler(this.btnIngresarU_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,9 +139,9 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSalir2;
-        private System.Windows.Forms.Button btnIngresarU;
         private System.Windows.Forms.Button btnIngresoP;
         private System.Windows.Forms.Button btnFacturacion;
         private System.Windows.Forms.Button btnRegistroF;
+        private System.Windows.Forms.Button btnIngresarU;
     }
 }

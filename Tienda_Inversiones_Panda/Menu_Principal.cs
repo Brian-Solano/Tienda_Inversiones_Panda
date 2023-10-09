@@ -19,6 +19,11 @@ namespace Tienda_Inversiones_Panda
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void btnIngresarU_Click(object sender, EventArgs e)
+        {
 
         }
     }
