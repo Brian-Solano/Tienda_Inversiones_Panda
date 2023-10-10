@@ -14,8 +14,8 @@ namespace Tienda_Inversiones_Panda
 {
     public partial class Login : Form
     {
-        public string cadena_conexion = @"Database=Tienda_Inversiones_Panda; Data Source=localhost;User id = root;Password=Huaweiz5";
-       
+        public string cadena_conexion = @"Database=restaurante; Data Source=localhost;User id = BrianSolano;Password=12345";
+
         public Login()
         {
             InitializeComponent();

@@ -35,5 +35,10 @@ namespace Tienda_Inversiones_Panda
             RP.Show();
             this.Hide();
         }
+
+        private void Menu_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

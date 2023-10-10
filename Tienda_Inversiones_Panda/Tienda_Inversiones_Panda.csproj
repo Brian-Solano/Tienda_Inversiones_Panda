@@ -81,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registo_de_Productos.resx">
       <DependentUpon>Registo_de_Productos.cs</DependentUpon>
@@ -97,6 +98,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jing.fm-profile-clipart-1153324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-icon-png-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password-icon-png-10.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

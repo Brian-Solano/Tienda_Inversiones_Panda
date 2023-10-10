@@ -129,6 +129,7 @@ namespace Tienda_Inversiones_Panda
             this.Controls.Add(this.lblInicio);
             this.Name = "Menu_Principal";
             this.Text = "Menu_Principal";
+            this.Load += new System.EventHandler(this.Menu_Principal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

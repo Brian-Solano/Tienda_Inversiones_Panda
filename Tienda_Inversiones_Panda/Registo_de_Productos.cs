@@ -63,8 +63,7 @@ namespace Tienda_Inversiones_Panda
             txtNombre.Visible = true;
             txtDistri.Visible = true;
             txtDispo.Visible = true;
-            txtIngresarProducto.Visible = true;
-
+            txtId.Visible = true;
 
 
 
@@ -87,7 +86,7 @@ namespace Tienda_Inversiones_Panda
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
 
-            MessageBox.Show("Producto agregado con éxito", "Ok", MessageBoxButtons.OK,
+            MessageBox.Show("Productos agregado con éxito", "Ok", MessageBoxButtons.OK,
             MessageBoxIcon.Information);
 
             string consulta = "select * from productos";
@@ -110,27 +109,27 @@ namespace Tienda_Inversiones_Panda
                 string myConnectionString = "";
                 if (myConnectionString == "")
                 {
-                    myConnectionString = @"Database=Tienda_Inversiones_Pan; Data Source=localhost;User id = root;Password=Huaweiz5"; ;
-                    MySqlConnection myConnection = new MySqlConnection(myConnectionString);
-                    string myInsertQuery = "DELETE FROM producto WHERE producto.ID = " + txtNombre.Text + "";
-                    MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
-                    myCommand.Connection = myConnection;
-                    myConnection.Open();
-                    myCommand.ExecuteNonQuery();
-                    myCommand.Connection.Close();
-
-                    MessageBox.Show("Producto Eliminado con éxito", "Ok", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-                    string cad = @"Database=restaurante;Data Source=localhost;User Id=AndradePeña;Password=Huaweiz5";
-                    string query = "select * from producto";
-                    MySqlConnection cnn = new MySqlConnection(cad);
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "tienda");
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "tienda";
+                    myConnectionString = @"Database=restaurante; Data Source=localhost;User id = BrianSolano;Password=12345";  
                 }
+                MySqlConnection myConnection = new MySqlConnection(myConnectionString);
+                string myInsertQuery = "DELETE FROM `productos` WHERE `productos`.`ID` = " + txtId.Text + "";
+                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myCommand.Connection.Close();
+
+                MessageBox.Show("Producto Eliminado con éxito", "Ok", MessageBoxButtons.OK,
+            MessageBoxIcon.Information);
+
+                string cad = @"Database=restaurante; Data Source=localhost;User id = BrianSolano;Password=12345";
+                string query = "select * from productos";
+                MySqlConnection cnn = new MySqlConnection(cad);
+                MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                da.Fill(ds, "restaurante");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "restaurante";
             }
             catch (System.Exception)
             {

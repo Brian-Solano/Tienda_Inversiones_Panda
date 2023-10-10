@@ -33,18 +33,16 @@ namespace Tienda_Inversiones_Panda
             this.btnIngre = new System.Windows.Forms.Button();
             this.lblNombreP = new System.Windows.Forms.Label();
             this.lblDistribuidor = new System.Windows.Forms.Label();
-            this.lblFechaV = new System.Windows.Forms.Label();
             this.lbldispo = new System.Windows.Forms.Label();
-            this.lblProductoIngre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDistri = new System.Windows.Forms.TextBox();
             this.txtDispo = new System.Windows.Forms.TextBox();
-            this.dtmFecha = new System.Windows.Forms.DateTimePicker();
-            this.txtIngresarProducto = new System.Windows.Forms.TextBox();
             this.btnNuevoP = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,42 +78,24 @@ namespace Tienda_Inversiones_Panda
             // lblDistribuidor
             // 
             this.lblDistribuidor.AutoSize = true;
-            this.lblDistribuidor.Location = new System.Drawing.Point(86, 103);
+            this.lblDistribuidor.Location = new System.Drawing.Point(86, 151);
             this.lblDistribuidor.Name = "lblDistribuidor";
             this.lblDistribuidor.Size = new System.Drawing.Size(85, 13);
             this.lblDistribuidor.TabIndex = 3;
             this.lblDistribuidor.Text = "DISTRIBUIDOR";
             // 
-            // lblFechaV
-            // 
-            this.lblFechaV.AutoSize = true;
-            this.lblFechaV.Location = new System.Drawing.Point(86, 166);
-            this.lblFechaV.Name = "lblFechaV";
-            this.lblFechaV.Size = new System.Drawing.Size(137, 13);
-            this.lblFechaV.TabIndex = 4;
-            this.lblFechaV.Text = "FECHA DE VENCIMIENTO";
-            // 
             // lbldispo
             // 
             this.lbldispo.AutoSize = true;
-            this.lbldispo.Location = new System.Drawing.Point(86, 229);
+            this.lbldispo.Location = new System.Drawing.Point(86, 238);
             this.lbldispo.Name = "lbldispo";
             this.lbldispo.Size = new System.Drawing.Size(78, 13);
             this.lbldispo.TabIndex = 5;
             this.lbldispo.Text = "DISPONIBLES";
             // 
-            // lblProductoIngre
-            // 
-            this.lblProductoIngre.AutoSize = true;
-            this.lblProductoIngre.Location = new System.Drawing.Point(86, 289);
-            this.lblProductoIngre.Name = "lblProductoIngre";
-            this.lblProductoIngre.Size = new System.Drawing.Size(137, 13);
-            this.lblProductoIngre.TabIndex = 6;
-            this.lblProductoIngre.Text = "PRODUCTO A INGRESAR";
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(341, 35);
+            this.txtNombre.Location = new System.Drawing.Point(321, 39);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
             this.txtNombre.TabIndex = 7;
@@ -123,33 +103,17 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtDistri
             // 
-            this.txtDistri.Location = new System.Drawing.Point(341, 103);
+            this.txtDistri.Location = new System.Drawing.Point(321, 144);
             this.txtDistri.Name = "txtDistri";
             this.txtDistri.Size = new System.Drawing.Size(216, 20);
             this.txtDistri.TabIndex = 8;
             // 
             // txtDispo
             // 
-            this.txtDispo.Location = new System.Drawing.Point(341, 222);
+            this.txtDispo.Location = new System.Drawing.Point(321, 231);
             this.txtDispo.Name = "txtDispo";
             this.txtDispo.Size = new System.Drawing.Size(216, 20);
             this.txtDispo.TabIndex = 9;
-            // 
-            // dtmFecha
-            // 
-            this.dtmFecha.Location = new System.Drawing.Point(341, 160);
-            this.dtmFecha.Name = "dtmFecha";
-            this.dtmFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtmFecha.TabIndex = 10;
-            // 
-            // txtIngresarProducto
-            // 
-            this.txtIngresarProducto.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtIngresarProducto.Location = new System.Drawing.Point(341, 286);
-            this.txtIngresarProducto.Name = "txtIngresarProducto";
-            this.txtIngresarProducto.Size = new System.Drawing.Size(63, 20);
-            this.txtIngresarProducto.TabIndex = 11;
-            this.txtIngresarProducto.TextChanged += new System.EventHandler(this.txtIngresarProducto_TextChanged);
             // 
             // btnNuevoP
             // 
@@ -174,9 +138,9 @@ namespace Tienda_Inversiones_Panda
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(565, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(563, 35);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(223, 144);
+            this.dataGridView1.Size = new System.Drawing.Size(366, 216);
             this.dataGridView1.TabIndex = 14;
             // 
             // btnModificar
@@ -188,23 +152,37 @@ namespace Tienda_Inversiones_Panda
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(560, 310);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(49, 13);
+            this.lblCodigo.TabIndex = 16;
+            this.lblCodigo.Text = "CODIGO";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(652, 307);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(216, 20);
+            this.txtId.TabIndex = 17;
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1024, 459);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevoP);
-            this.Controls.Add(this.txtIngresarProducto);
-            this.Controls.Add(this.dtmFecha);
             this.Controls.Add(this.txtDispo);
             this.Controls.Add(this.txtDistri);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblProductoIngre);
             this.Controls.Add(this.lbldispo);
-            this.Controls.Add(this.lblFechaV);
             this.Controls.Add(this.lblDistribuidor);
             this.Controls.Add(this.lblNombreP);
             this.Controls.Add(this.btnIngre);
@@ -224,17 +202,15 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnIngre;
         private System.Windows.Forms.Label lblNombreP;
         private System.Windows.Forms.Label lblDistribuidor;
-        private System.Windows.Forms.Label lblFechaV;
         private System.Windows.Forms.Label lbldispo;
-        private System.Windows.Forms.Label lblProductoIngre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDistri;
         private System.Windows.Forms.TextBox txtDispo;
-        private System.Windows.Forms.DateTimePicker dtmFecha;
-        private System.Windows.Forms.TextBox txtIngresarProducto;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
