@@ -34,24 +34,25 @@ namespace Tienda_Inversiones_Panda
             this.lblNombreP = new System.Windows.Forms.Label();
             this.lblDistribuidor = new System.Windows.Forms.Label();
             this.lblFechaV = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
+            this.lbldispo = new System.Windows.Forms.Label();
             this.lblProductoIngre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDistri = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtDispo = new System.Windows.Forms.TextBox();
             this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.txtIngresarProducto = new System.Windows.Forms.TextBox();
             this.btnNuevoP = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
             // 
-            this.btnatras.Location = new System.Drawing.Point(651, 353);
+            this.btnatras.Location = new System.Drawing.Point(689, 353);
             this.btnatras.Name = "btnatras";
-            this.btnatras.Size = new System.Drawing.Size(137, 58);
+            this.btnatras.Size = new System.Drawing.Size(108, 26);
             this.btnatras.TabIndex = 0;
             this.btnatras.Text = "ATRAS";
             this.btnatras.UseVisualStyleBackColor = true;
@@ -61,7 +62,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnIngre.Location = new System.Drawing.Point(199, 353);
             this.btnIngre.Name = "btnIngre";
-            this.btnIngre.Size = new System.Drawing.Size(137, 58);
+            this.btnIngre.Size = new System.Drawing.Size(138, 26);
             this.btnIngre.TabIndex = 1;
             this.btnIngre.Text = "INGRESAR";
             this.btnIngre.UseVisualStyleBackColor = true;
@@ -94,14 +95,14 @@ namespace Tienda_Inversiones_Panda
             this.lblFechaV.TabIndex = 4;
             this.lblFechaV.Text = "FECHA DE VENCIMIENTO";
             // 
-            // lblPrecio
+            // lbldispo
             // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(86, 229);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(47, 13);
-            this.lblPrecio.TabIndex = 5;
-            this.lblPrecio.Text = "PRECIO";
+            this.lbldispo.AutoSize = true;
+            this.lbldispo.Location = new System.Drawing.Point(86, 229);
+            this.lbldispo.Name = "lbldispo";
+            this.lbldispo.Size = new System.Drawing.Size(78, 13);
+            this.lbldispo.TabIndex = 5;
+            this.lbldispo.Text = "DISPONIBLES";
             // 
             // lblProductoIngre
             // 
@@ -127,12 +128,12 @@ namespace Tienda_Inversiones_Panda
             this.txtDistri.Size = new System.Drawing.Size(216, 20);
             this.txtDistri.TabIndex = 8;
             // 
-            // txtPrecio
+            // txtDispo
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(341, 222);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(216, 20);
-            this.txtPrecio.TabIndex = 9;
+            this.txtDispo.Location = new System.Drawing.Point(341, 222);
+            this.txtDispo.Name = "txtDispo";
+            this.txtDispo.Size = new System.Drawing.Size(216, 20);
+            this.txtDispo.TabIndex = 9;
             // 
             // dtmFecha
             // 
@@ -143,16 +144,18 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtIngresarProducto
             // 
+            this.txtIngresarProducto.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.txtIngresarProducto.Location = new System.Drawing.Point(341, 286);
             this.txtIngresarProducto.Name = "txtIngresarProducto";
             this.txtIngresarProducto.Size = new System.Drawing.Size(63, 20);
             this.txtIngresarProducto.TabIndex = 11;
+            this.txtIngresarProducto.TextChanged += new System.EventHandler(this.txtIngresarProducto_TextChanged);
             // 
             // btnNuevoP
             // 
             this.btnNuevoP.Location = new System.Drawing.Point(22, 353);
             this.btnNuevoP.Name = "btnNuevoP";
-            this.btnNuevoP.Size = new System.Drawing.Size(137, 58);
+            this.btnNuevoP.Size = new System.Drawing.Size(132, 26);
             this.btnNuevoP.TabIndex = 12;
             this.btnNuevoP.Text = "NUEVO";
             this.btnNuevoP.UseVisualStyleBackColor = true;
@@ -160,9 +163,9 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(382, 353);
+            this.btnEliminar.Location = new System.Drawing.Point(367, 353);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(137, 58);
+            this.btnEliminar.Size = new System.Drawing.Size(134, 26);
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -176,21 +179,31 @@ namespace Tienda_Inversiones_Panda
             this.dataGridView1.Size = new System.Drawing.Size(223, 144);
             this.dataGridView1.TabIndex = 14;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(537, 353);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(117, 26);
+            this.btnModificar.TabIndex = 15;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevoP);
             this.Controls.Add(this.txtIngresarProducto);
             this.Controls.Add(this.dtmFecha);
-            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtDispo);
             this.Controls.Add(this.txtDistri);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblProductoIngre);
-            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lbldispo);
             this.Controls.Add(this.lblFechaV);
             this.Controls.Add(this.lblDistribuidor);
             this.Controls.Add(this.lblNombreP);
@@ -212,15 +225,16 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Label lblNombreP;
         private System.Windows.Forms.Label lblDistribuidor;
         private System.Windows.Forms.Label lblFechaV;
-        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.Label lbldispo;
         private System.Windows.Forms.Label lblProductoIngre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDistri;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtDispo;
         private System.Windows.Forms.DateTimePicker dtmFecha;
         private System.Windows.Forms.TextBox txtIngresarProducto;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

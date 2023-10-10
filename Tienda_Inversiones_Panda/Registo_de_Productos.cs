@@ -16,7 +16,7 @@ namespace Tienda_Inversiones_Panda
     {
         
 
-        public string cadena_conexion = @"Database=Tienda_Inversiones_Panda; Data Source=localhost;User id = root;Password=Huaweiz5";
+        public string cadena_conexion = @"Database=restaurante; Data Source=localhost;User id = BrianSolano;Password=12345";
         public Registo_de_Productos()
         {
             InitializeComponent();
@@ -26,18 +26,18 @@ namespace Tienda_Inversiones_Panda
         {
             try
             {
-                string consulta = "select * from producto";
+                string consulta = "select * from productos";
                 MySqlConnection conexion = new MySqlConnection(cadena_conexion);
                 MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
                 System.Data.DataSet ds = new System.Data.DataSet();
-                comando.Fill(ds, "producto");
+                comando.Fill(ds, "productos");
                 dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "producto";
+                dataGridView1.DataMember = "productos";
             }
             catch (MySqlException)
             {
 
-                MessageBox.Show("Error de conexion", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error de conexion 1", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -62,7 +62,7 @@ namespace Tienda_Inversiones_Panda
 
             txtNombre.Visible = true;
             txtDistri.Visible = true;
-            txtPrecio.Visible = true;
+            txtDispo.Visible = true;
             txtIngresarProducto.Visible = true;
 
 
@@ -74,12 +74,13 @@ namespace Tienda_Inversiones_Panda
         private void btnIngre_Click(object sender, EventArgs e)
         {
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO producto(Nombre,Distribuidor,Disponibles) Values(?Nombre,?Distribuidor,?Disponibles)";
+            string myInsertQuery = "INSERT INTO productos(Nombre,Distribuidor,Disponibles) Values(?Nombre,?Distribuidor,?Disponibles)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
             myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 40).Value = txtNombre.Text;
             myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 45).Value = txtDistri.Text;
-            
+            myCommand.Parameters.Add("?Disponibles", MySqlDbType.Int32, 50).Value = txtDispo.Text;
+
 
             myCommand.Connection = myConnection;
             myConnection.Open();
@@ -89,14 +90,14 @@ namespace Tienda_Inversiones_Panda
             MessageBox.Show("Producto agregado con éxito", "Ok", MessageBoxButtons.OK,
             MessageBoxIcon.Information);
 
-            string consulta = "select * from producto";
+            string consulta = "select * from productos";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
             MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
             System.Data.DataSet ds = new System.Data.DataSet();
-            comando.Fill(ds, "tienda");
+            comando.Fill(ds, "restaurante");
             dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "tienda";
+            dataGridView1.DataMember = "restaurante";
 
 
             MessageBox.Show("Se ha guardado el dato en la tabla Productos");
@@ -109,7 +110,7 @@ namespace Tienda_Inversiones_Panda
                 string myConnectionString = "";
                 if (myConnectionString == "")
                 {
-                    myConnectionString = @"Database=Tienda_Inversiones_Panda; Data Source=localhost;User id = root;Password=Huaweiz5"; ;
+                    myConnectionString = @"Database=Tienda_Inversiones_Pan; Data Source=localhost;User id = root;Password=Huaweiz5"; ;
                     MySqlConnection myConnection = new MySqlConnection(myConnectionString);
                     string myInsertQuery = "DELETE FROM producto WHERE producto.ID = " + txtNombre.Text + "";
                     MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
@@ -136,6 +137,11 @@ namespace Tienda_Inversiones_Panda
                 MessageBox.Show("No se ha podido hacer la eliminacion");
 
             }
+
+        }
+
+        private void txtIngresarProducto_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
