@@ -41,7 +41,7 @@ namespace Tienda_Inversiones_Panda
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -152,14 +152,14 @@ namespace Tienda_Inversiones_Panda
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // lblCodigo
+            // lblID
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(560, 310);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(49, 13);
-            this.lblCodigo.TabIndex = 16;
-            this.lblCodigo.Text = "CODIGO";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(560, 310);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 16;
+            this.lblID.Text = "ID";
             // 
             // txtId
             // 
@@ -167,6 +167,7 @@ namespace Tienda_Inversiones_Panda
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(216, 20);
             this.txtId.TabIndex = 17;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // Registo_de_Productos
             // 
@@ -174,7 +175,7 @@ namespace Tienda_Inversiones_Panda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 459);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEliminar);
@@ -210,7 +211,7 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtId;
     }
 }
