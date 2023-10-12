@@ -24,8 +24,8 @@ namespace Tienda_Inversiones_Panda
 
         private void btnIngresarU_Click(object sender, EventArgs e)
         {
+            this.Close(); // Cierra el formulario actual
             Form formulario = new Login();
-            this.Hide();
             formulario.Show();
         }
 
