@@ -43,6 +43,7 @@ namespace Tienda_Inversiones_Panda
             this.btnModificar = new System.Windows.Forms.Button();
             this.lblID = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +143,7 @@ namespace Tienda_Inversiones_Panda
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(366, 216);
             this.dataGridView1.TabIndex = 14;
-           
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnModificar
             // 
@@ -171,11 +172,22 @@ namespace Tienda_Inversiones_Panda
             this.txtId.TabIndex = 17;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(22, 409);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(117, 26);
+            this.btnActualizar.TabIndex = 18;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 459);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.btnModificar);
@@ -215,5 +227,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

@@ -157,11 +157,34 @@ namespace Tienda_Inversiones_Panda
 
         }
 
-      
+
+
 
 
 
         private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridView1.SelectedRows[0]; // Obtén la fila seleccionada
+
+                // Accede a los valores de las celdas individuales dentro de la fila
+                string nombre = row.Cells["Nombre"].Value.ToString();
+                string distribuidor = row.Cells["Distribuidor"].Value.ToString();
+                string disponibilidad = row.Cells["Disponibles"].Value.ToString();
+                string id = row.Cells["Id"].Value.ToString();
+
+                // Asigna los valores a los TextBoxes correspondientes
+                txtNombre.Text = nombre;
+                txtDistri.Text = distribuidor;
+                txtDispo.Text = disponibilidad;
+                txtId.Text = id;
+            }
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -217,7 +240,7 @@ namespace Tienda_Inversiones_Panda
             }
 
             // Función para verificar la validez de los datos ingresados
-             bool EsValido(string nombre, string distribuidor, string disponibilidad)
+            bool EsValido(string nombre, string distribuidor, string disponibilidad)
             {
                 // Aquí debes implementar la lógica para verificar la validez de los datos ingresados.
                 // Puedes realizar comprobaciones como la verificación de cadenas vacías, valores nulos, formatos de datos y otros requisitos de validación.
@@ -232,9 +255,14 @@ namespace Tienda_Inversiones_Panda
 
                 return true; // Devuelve true si todos los datos son válidos.
             }
-
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+           
+
+        }
     }
 
        
