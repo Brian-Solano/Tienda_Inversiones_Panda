@@ -142,6 +142,7 @@ namespace Tienda_Inversiones_Panda
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(366, 216);
             this.dataGridView1.TabIndex = 14;
+           
             // 
             // btnModificar
             // 
@@ -151,6 +152,7 @@ namespace Tienda_Inversiones_Panda
             this.btnModificar.TabIndex = 15;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // lblID
             // 
