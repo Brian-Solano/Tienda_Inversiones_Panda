@@ -40,5 +40,13 @@ namespace Tienda_Inversiones_Panda
         {
 
         }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+
+            Facturacion FT = new Facturacion();
+            FT.Show();
+            this.Hide();
+        }
     }
 }

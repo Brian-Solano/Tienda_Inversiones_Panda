@@ -94,6 +94,7 @@ namespace Tienda_Inversiones_Panda
             this.btnFacturacion.TabIndex = 6;
             this.btnFacturacion.Text = "FACTURACIÓN";
             this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
             // btnRegistroF
             // 

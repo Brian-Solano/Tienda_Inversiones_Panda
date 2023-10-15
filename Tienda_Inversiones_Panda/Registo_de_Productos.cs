@@ -54,9 +54,9 @@ namespace Tienda_Inversiones_Panda
        
         private void btnatras_Click(object sender, EventArgs e)
         {
-            Form formulario = new Menu_Principal();
+           Form formulario = new Menu_Principal();
            this.Hide();
-            formulario.Show();
+           formulario.Show();
         }
 
         private void btnNuevoP_Click(object sender, EventArgs e)
