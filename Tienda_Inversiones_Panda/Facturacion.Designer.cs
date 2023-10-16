@@ -43,8 +43,12 @@ namespace Tienda_Inversiones_Panda
             this.dtmFecha = new System.Windows.Forms.DateTimePicker();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtCantidad1 = new System.Windows.Forms.TextBox();
+            this.txtPrecio1 = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +90,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(447, 249);
+            this.btnGuardar.Location = new System.Drawing.Point(613, 249);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 4;
@@ -96,7 +100,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(545, 249);
+            this.btnEliminar.Location = new System.Drawing.Point(713, 249);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 5;
@@ -168,27 +172,70 @@ namespace Tienda_Inversiones_Panda
             this.lblPrecio.TabIndex = 13;
             this.lblPrecio.Text = "PRECIO";
             // 
-            // txtCantidad
+            // txtCantidad1
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(409, 140);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(126, 20);
-            this.txtCantidad.TabIndex = 14;
+            this.txtCantidad1.Location = new System.Drawing.Point(409, 140);
+            this.txtCantidad1.Name = "txtCantidad1";
+            this.txtCantidad1.Size = new System.Drawing.Size(126, 20);
+            this.txtCantidad1.TabIndex = 14;
             // 
-            // txtPrecio
+            // txtPrecio1
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(409, 204);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(126, 20);
-            this.txtPrecio.TabIndex = 15;
+            this.txtPrecio1.Location = new System.Drawing.Point(409, 204);
+            this.txtPrecio1.Name = "txtPrecio1";
+            this.txtPrecio1.Size = new System.Drawing.Size(126, 20);
+            this.txtPrecio1.TabIndex = 15;
+            this.txtPrecio1.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(409, 249);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 16;
+            this.btnNuevo.Text = "NUEVO";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(512, 249);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(599, 207);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(31, 13);
+            this.lblTotal.TabIndex = 18;
+            this.lblTotal.Text = "Total";
+            this.lblTotal.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(636, 204);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 19;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.txtPrecio1);
+            this.Controls.Add(this.txtCantidad1);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.dtmFecha);
@@ -228,7 +275,11 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.DateTimePicker dtmFecha;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtCantidad1;
+        private System.Windows.Forms.TextBox txtPrecio1;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }
