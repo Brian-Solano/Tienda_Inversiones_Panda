@@ -46,7 +46,7 @@ namespace Tienda_Inversiones_Panda
                 string contraseñaIngresada = txtContra.Text;
 
                 // Verificar la autenticidad del usuario y la contraseña en la base de datos
-                string cadena_conexion = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345"; // Reemplaza con tu cadena de conexión real
+                string cadena_conexion = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345"; 
                 MySqlConnection conexion = new MySqlConnection(cadena_conexion);
                 conexion.Open();
 
