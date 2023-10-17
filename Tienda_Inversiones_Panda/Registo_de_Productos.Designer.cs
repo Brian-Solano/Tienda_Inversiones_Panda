@@ -59,9 +59,9 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnIngre
             // 
-            this.btnIngre.Location = new System.Drawing.Point(199, 353);
+            this.btnIngre.Location = new System.Drawing.Point(144, 353);
             this.btnIngre.Name = "btnIngre";
-            this.btnIngre.Size = new System.Drawing.Size(138, 26);
+            this.btnIngre.Size = new System.Drawing.Size(102, 26);
             this.btnIngre.TabIndex = 1;
             this.btnIngre.Text = "INGRESAR";
             this.btnIngre.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@ namespace Tienda_Inversiones_Panda
             // lblNombreP
             // 
             this.lblNombreP.AutoSize = true;
-            this.lblNombreP.Location = new System.Drawing.Point(86, 42);
+            this.lblNombreP.Location = new System.Drawing.Point(86, 109);
             this.lblNombreP.Name = "lblNombreP";
             this.lblNombreP.Size = new System.Drawing.Size(142, 13);
             this.lblNombreP.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace Tienda_Inversiones_Panda
             // lblDistribuidor
             // 
             this.lblDistribuidor.AutoSize = true;
-            this.lblDistribuidor.Location = new System.Drawing.Point(86, 151);
+            this.lblDistribuidor.Location = new System.Drawing.Point(86, 171);
             this.lblDistribuidor.Name = "lblDistribuidor";
             this.lblDistribuidor.Size = new System.Drawing.Size(85, 13);
             this.lblDistribuidor.TabIndex = 3;
@@ -96,7 +96,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(321, 39);
+            this.txtNombre.Location = new System.Drawing.Point(247, 109);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(216, 20);
             this.txtNombre.TabIndex = 7;
@@ -104,23 +104,23 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtDistri
             // 
-            this.txtDistri.Location = new System.Drawing.Point(321, 144);
+            this.txtDistri.Location = new System.Drawing.Point(247, 171);
             this.txtDistri.Name = "txtDistri";
             this.txtDistri.Size = new System.Drawing.Size(216, 20);
             this.txtDistri.TabIndex = 8;
             // 
             // txtDispo
             // 
-            this.txtDispo.Location = new System.Drawing.Point(321, 231);
+            this.txtDispo.Location = new System.Drawing.Point(247, 231);
             this.txtDispo.Name = "txtDispo";
-            this.txtDispo.Size = new System.Drawing.Size(216, 20);
+            this.txtDispo.Size = new System.Drawing.Size(68, 20);
             this.txtDispo.TabIndex = 9;
             // 
             // btnNuevoP
             // 
-            this.btnNuevoP.Location = new System.Drawing.Point(22, 353);
+            this.btnNuevoP.Location = new System.Drawing.Point(51, 353);
             this.btnNuevoP.Name = "btnNuevoP";
-            this.btnNuevoP.Size = new System.Drawing.Size(132, 26);
+            this.btnNuevoP.Size = new System.Drawing.Size(73, 26);
             this.btnNuevoP.TabIndex = 12;
             this.btnNuevoP.Text = "NUEVO";
             this.btnNuevoP.UseVisualStyleBackColor = true;
@@ -128,9 +128,9 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(367, 353);
+            this.btnEliminar.Location = new System.Drawing.Point(543, 353);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(134, 26);
+            this.btnEliminar.Size = new System.Drawing.Size(111, 26);
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -139,15 +139,17 @@ namespace Tienda_Inversiones_Panda
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(563, 35);
+            this.dataGridView1.Location = new System.Drawing.Point(469, 109);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(366, 216);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.Size = new System.Drawing.Size(525, 216);
             this.dataGridView1.TabIndex = 14;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(537, 353);
+            this.btnModificar.Location = new System.Drawing.Point(396, 353);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 26);
             this.btnModificar.TabIndex = 15;
@@ -158,7 +160,7 @@ namespace Tienda_Inversiones_Panda
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(560, 310);
+            this.lblID.Location = new System.Drawing.Point(86, 293);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 16;
@@ -166,18 +168,18 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(652, 307);
+            this.txtId.Location = new System.Drawing.Point(247, 286);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(216, 20);
+            this.txtId.Size = new System.Drawing.Size(68, 20);
             this.txtId.TabIndex = 17;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(22, 409);
+            this.btnActualizar.Location = new System.Drawing.Point(263, 353);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(117, 26);
+            this.btnActualizar.Size = new System.Drawing.Size(113, 26);
             this.btnActualizar.TabIndex = 18;
             this.btnActualizar.Text = "ACTUALIZAR";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -224,10 +226,10 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtDispo;
         private System.Windows.Forms.Button btnNuevoP;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnActualizar;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
