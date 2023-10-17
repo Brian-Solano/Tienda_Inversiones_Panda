@@ -44,6 +44,9 @@ namespace Tienda_Inversiones_Panda
             this.lblID = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.RavId = new System.Windows.Forms.RadioButton();
+            this.RavNombre = new System.Windows.Forms.RadioButton();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,11 +188,46 @@ namespace Tienda_Inversiones_Panda
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // RavId
+            // 
+            this.RavId.AutoSize = true;
+            this.RavId.Location = new System.Drawing.Point(488, 39);
+            this.RavId.Name = "RavId";
+            this.RavId.Size = new System.Drawing.Size(36, 17);
+            this.RavId.TabIndex = 19;
+            this.RavId.TabStop = true;
+            this.RavId.Text = "ID";
+            this.RavId.UseVisualStyleBackColor = true;
+            this.RavId.CheckedChanged += new System.EventHandler(this.RavId_CheckedChanged);
+            // 
+            // RavNombre
+            // 
+            this.RavNombre.AutoSize = true;
+            this.RavNombre.Location = new System.Drawing.Point(488, 74);
+            this.RavNombre.Name = "RavNombre";
+            this.RavNombre.Size = new System.Drawing.Size(62, 17);
+            this.RavNombre.TabIndex = 20;
+            this.RavNombre.TabStop = true;
+            this.RavNombre.Text = "Nombre";
+            this.RavNombre.UseVisualStyleBackColor = true;
+            this.RavNombre.CheckedChanged += new System.EventHandler(this.RavNombre_CheckedChanged);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(574, 71);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(223, 20);
+            this.txtBuscar.TabIndex = 21;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 459);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.RavNombre);
+            this.Controls.Add(this.RavId);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblID);
@@ -231,5 +269,8 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnActualizar;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.RadioButton RavId;
+        private System.Windows.Forms.RadioButton RavNombre;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

@@ -85,7 +85,7 @@ namespace Tienda_Inversiones_Panda
             myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 45).Value = txtDistri.Text;
             myCommand.Parameters.Add("?Disponibles", MySqlDbType.Int32, 50).Value = txtDispo.Text;
 
-            // Obtener el último ID de la base de datos y agregar 1
+            // Obtiene el último ID de la base de datos y agregar 1
             string getLastIdQuery = "SELECT MAX(ID) FROM producto";
             MySqlCommand getLastIdCommand = new MySqlCommand(getLastIdQuery, myConnection);
             myConnection.Open();
@@ -104,7 +104,7 @@ namespace Tienda_Inversiones_Panda
 
             MessageBox.Show("Productos agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Resto del código para actualizar el DataGridView con los datos del inventario
+           
             string consulta = "select * from producto";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
@@ -141,7 +141,7 @@ namespace Tienda_Inversiones_Panda
                         MessageBox.Show("El producto no se encontró en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    // Luego, puedes realizar la consulta nuevamente para actualizar el DataGridView.
+                    // Luego, realiza la consulta nuevamente para actualizar el DataGridView.
                     string selectQuery = "SELECT * FROM producto";
                     MySqlDataAdapter dataAdapter = new MySqlDataAdapter(selectQuery, connection);
                     DataSet dataSet = new DataSet();
@@ -192,7 +192,7 @@ namespace Tienda_Inversiones_Panda
                 string nombre = row.Cells["Nombre"].Value.ToString();
                 string distribuidor = row.Cells["Distribuidor"].Value.ToString();
                 string disponibilidad = row.Cells["Disponibles"].Value.ToString();
-                int id = Convert.ToInt32(row.Cells["ID"].Value); // Asegúrate de que el nombre de la columna coincida con la base de datos
+                int id = Convert.ToInt32(row.Cells["ID"].Value); 
 
                 // Asigna los valores a los TextBoxes correspondientes
                 txtNombre.Text = nombre;
@@ -213,17 +213,16 @@ namespace Tienda_Inversiones_Panda
                 {
                     connection.Open();
 
-                    // Aquí debes verificar la validez de los datos antes de realizar la actualización en la base de datos.
+                    // Aquí verifica la validez de los datos antes de realizar la actualización en la base de datos.
 
                     if (EsValido(txtNombre.Text, txtDistri.Text, txtDispo.Text))
                     {
-                        // La función EsValido() debe implementarse para verificar la validez de los datos ingresados.
-                        // Si los datos son válidos, puedes proceder con la actualización en la base de datos.
+                        
 
                         string updateQuery = "UPDATE producto SET Nombre = @Nombre, Distribuidor = @Distribuidor, Disponibles = @Disponibles WHERE ID = @ID";
                         MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection);
 
-                        // Asegúrate de reemplazar los parámetros con los valores de los campos de texto correspondientes.
+                     
                         updateCommand.Parameters.AddWithValue("@Nombre", txtNombre.Text);
                         updateCommand.Parameters.AddWithValue("@Distribuidor", txtDistri.Text);
                         updateCommand.Parameters.AddWithValue("@Disponibles", txtDispo.Text);
@@ -240,7 +239,6 @@ namespace Tienda_Inversiones_Panda
                             MessageBox.Show("No se pudo encontrar el producto en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
-                        // Luego, puedes actualizar el DataGridView para reflejar los cambios en la base de datos.
                         string selectQuery = "SELECT * FROM producto";
                         MySqlDataAdapter dataAdapter = new MySqlDataAdapter(selectQuery, connection);
                         DataSet dataSet = new DataSet();
@@ -250,7 +248,7 @@ namespace Tienda_Inversiones_Panda
                     else
                     {
                         MessageBox.Show("Por favor, introduzca datos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        // Aquí puedes implementar la lógica adicional para permitir que el usuario corrija los datos inválidos.
+                      
                     }
                 }
             }
@@ -262,16 +260,16 @@ namespace Tienda_Inversiones_Panda
             // Función para verificar la validez de los datos ingresados
             bool EsValido(string nombre, string distribuidor, string disponibilidad)
             {
-                // Aquí debes implementar la lógica para verificar la validez de los datos ingresados.
-                // Puedes realizar comprobaciones como la verificación de cadenas vacías, valores nulos, formatos de datos y otros requisitos de validación.
+               
+                // realizar comprobaciones como la verificación de cadenas vacías, valores nulos, formatos de datos y otros requisitos de validación.
 
-                // Por ejemplo, puedes verificar si los campos de texto no están vacíos.
+              
                 if (string.IsNullOrWhiteSpace(nombre) || string.IsNullOrWhiteSpace(distribuidor) || string.IsNullOrWhiteSpace(disponibilidad))
                 {
                     return false;
                 }
 
-                // Aquí puedes agregar más validaciones según tus requisitos.
+               
 
                 return true; // Devuelve true si todos los datos son válidos.
             }
@@ -281,6 +279,51 @@ namespace Tienda_Inversiones_Panda
         {
 
            
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtBuscar.Text) && dataGridView1.DataSource == null)
+            {
+                // Si el campo de búsqueda está vacío y el DataGridView también está vacío, no muestra el MessageBox.
+                // Limpiar el campo de búsqueda y el DataGridView aquí si es necesario.
+                txtBuscar.Clear(); // Limpiar el campo de búsqueda
+            }
+            else if (!string.IsNullOrEmpty(txtBuscar.Text))
+            {
+                string consulta = string.Empty;
+
+                if (RavId.Checked) // Verificar si se selecciona el radio button de ID
+                {
+                   
+                    // Utiliza el valor de txtBuscar.Text para realizar la búsqueda por ID
+                    consulta = "SELECT * FROM producto WHERE Id = '" + txtBuscar.Text + "'";
+                }
+                else if (RavNombre.Checked) // Verificar si se selecciona el radio button de nombre
+                {
+                    
+                    // Utiliza el valor de txtBuscar.Text para realizar la búsqueda por nombre
+                    consulta = "SELECT * FROM producto WHERE Nombre = '" + txtBuscar.Text + "'";
+                }
+
+                // Ejecutar la consulta y vincular los resultados al DataGridView
+                MySqlConnection conexion = new MySqlConnection(cadena_conexion);
+                MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                comando.Fill(ds, "resultado");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "resultado";
+            }
+        }
+
+        private void RavId_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RavNombre_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
