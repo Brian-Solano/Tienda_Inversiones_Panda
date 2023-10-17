@@ -47,6 +47,7 @@ namespace Tienda_Inversiones_Panda
             this.RavId = new System.Windows.Forms.RadioButton();
             this.RavNombre = new System.Windows.Forms.RadioButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -220,11 +221,21 @@ namespace Tienda_Inversiones_Panda
             this.txtBuscar.TabIndex = 21;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(629, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "BUSCADOR";
+            // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 459);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.RavNombre);
             this.Controls.Add(this.RavId);
@@ -272,5 +283,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.RadioButton RavId;
         private System.Windows.Forms.RadioButton RavNombre;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label1;
     }
 }
