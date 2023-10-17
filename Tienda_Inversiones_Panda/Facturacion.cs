@@ -144,7 +144,7 @@ namespace Tienda_Inversiones_Panda
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dataGridView1.SelectedRows[0]; // Obtén la fila seleccionada
+                DataGridViewRow row = dataGridView1.SelectedRows[0]; // Obtiene la fila seleccionada
 
                 // Accede a los valores de las celdas individuales dentro de la fila
                 string nombre = row.Cells["Nombre_Cliente"].Value.ToString();

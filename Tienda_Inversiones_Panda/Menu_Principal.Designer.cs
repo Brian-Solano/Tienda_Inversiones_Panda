@@ -42,7 +42,7 @@ namespace Tienda_Inversiones_Panda
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(317, 80);
+            this.lblInicio.Location = new System.Drawing.Point(381, 80);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(39, 13);
             this.lblInicio.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace Tienda_Inversiones_Panda
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(296, 145);
+            this.label2.Location = new System.Drawing.Point(358, 150);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace Tienda_Inversiones_Panda
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 206);
+            this.label3.Location = new System.Drawing.Point(296, 206);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 13);
             this.label3.TabIndex = 2;
@@ -88,7 +88,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnFacturacion
             // 
-            this.btnFacturacion.Location = new System.Drawing.Point(276, 324);
+            this.btnFacturacion.Location = new System.Drawing.Point(361, 324);
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(99, 68);
             this.btnFacturacion.TabIndex = 6;
@@ -107,7 +107,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnIngresarU
             // 
-            this.btnIngresarU.Location = new System.Drawing.Point(635, 57);
+            this.btnIngresarU.Location = new System.Drawing.Point(632, 58);
             this.btnIngresarU.Name = "btnIngresarU";
             this.btnIngresarU.Size = new System.Drawing.Size(102, 58);
             this.btnIngresarU.TabIndex = 4;
