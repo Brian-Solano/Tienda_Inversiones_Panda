@@ -48,7 +48,8 @@ namespace Tienda_Inversiones_Panda
 
         private void Registo_de_Productos_Load(object sender, EventArgs e)
         {
-
+            idCounter = 1;
+            txtId.Text = idCounter.ToString();
         }
      
        
@@ -77,23 +78,33 @@ namespace Tienda_Inversiones_Panda
         private void btnIngre_Click(object sender, EventArgs e)
         {
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO producto(Nombre,Distribuidor,Disponibles,ID) Values(?Nombre,?Distribuidor,?Disponibles,?ID)";
+            string myInsertQuery = "INSERT INTO producto(Nombre, Distribuidor, Disponibles, ID) VALUES (?Nombre, ?Distribuidor, ?Disponibles, ?ID)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
             myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 40).Value = txtNombre.Text;
             myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 45).Value = txtDistri.Text;
             myCommand.Parameters.Add("?Disponibles", MySqlDbType.Int32, 50).Value = txtDispo.Text;
-            myCommand.Parameters.Add("?ID", MySqlDbType.Int32, 40).Value = txtId.Text;
-           
+
+            // Obtener el último ID de la base de datos y agregar 1
+            string getLastIdQuery = "SELECT MAX(ID) FROM producto";
+            MySqlCommand getLastIdCommand = new MySqlCommand(getLastIdQuery, myConnection);
+            myConnection.Open();
+            var result = getLastIdCommand.ExecuteScalar();
+            myConnection.Close();
+            int newId = result == DBNull.Value ? 1 : Convert.ToInt32(result) + 1;
+
+            // Asignar el nuevo ID al parámetro y al campo de texto correspondiente
+            myCommand.Parameters.Add("?ID", MySqlDbType.Int32, 40).Value = newId;
+            txtId.Text = newId.ToString();
 
             myCommand.Connection = myConnection;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
-            myCommand.Connection.Close();
+            myConnection.Close();
 
-            MessageBox.Show("Productos agregado con éxito", "Ok", MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+            MessageBox.Show("Productos agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Resto del código para actualizar el DataGridView con los datos del inventario
             string consulta = "select * from producto";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
@@ -103,8 +114,6 @@ namespace Tienda_Inversiones_Panda
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "inventario";
 
-
-            MessageBox.Show("Se ha guardado el dato en la tabla Producto");
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -152,9 +161,20 @@ namespace Tienda_Inversiones_Panda
 
         }
 
+
+
+        // Variable para almacenar el contador de ID.
+        private int idCounter = 0;
+
+        // Evento TextChanged para el control txtId
         private void txtId_TextChanged(object sender, EventArgs e)
         {
 
+            if (!int.TryParse(txtId.Text, out idCounter)) // Comprueba si el texto es un número entero válido
+            {
+                // Si no es un número válido, establece el ID en el valor actual del contador.
+                txtId.Text = idCounter.ToString();
+            }
         }
 
 
@@ -172,13 +192,13 @@ namespace Tienda_Inversiones_Panda
                 string nombre = row.Cells["Nombre"].Value.ToString();
                 string distribuidor = row.Cells["Distribuidor"].Value.ToString();
                 string disponibilidad = row.Cells["Disponibles"].Value.ToString();
-                string id = row.Cells["Id"].Value.ToString();
+                int id = Convert.ToInt32(row.Cells["ID"].Value); // Asegúrate de que el nombre de la columna coincida con la base de datos
 
                 // Asigna los valores a los TextBoxes correspondientes
                 txtNombre.Text = nombre;
                 txtDistri.Text = distribuidor;
                 txtDispo.Text = disponibilidad;
-                txtId.Text = id;
+                txtId.Text = id.ToString();
             }
 
         }

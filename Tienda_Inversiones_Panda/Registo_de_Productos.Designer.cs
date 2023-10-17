@@ -168,6 +168,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.txtId.Location = new System.Drawing.Point(652, 307);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(216, 20);
             this.txtId.TabIndex = 17;
             this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
