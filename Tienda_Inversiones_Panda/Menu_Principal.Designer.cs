@@ -42,7 +42,8 @@ namespace Tienda_Inversiones_Panda
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.Location = new System.Drawing.Point(381, 80);
+            this.lblInicio.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblInicio.Location = new System.Drawing.Point(36, 14);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(39, 13);
             this.lblInicio.TabIndex = 0;
@@ -51,7 +52,8 @@ namespace Tienda_Inversiones_Panda
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(358, 150);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(358, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
@@ -60,7 +62,8 @@ namespace Tienda_Inversiones_Panda
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 206);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label3.Location = new System.Drawing.Point(303, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 13);
             this.label3.TabIndex = 2;
@@ -68,9 +71,11 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnSalir2
             // 
-            this.btnSalir2.Location = new System.Drawing.Point(36, 70);
+            this.btnSalir2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalir2.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSalir2.Location = new System.Drawing.Point(684, 4);
             this.btnSalir2.Name = "btnSalir2";
-            this.btnSalir2.Size = new System.Drawing.Size(78, 46);
+            this.btnSalir2.Size = new System.Drawing.Size(104, 28);
             this.btnSalir2.TabIndex = 3;
             this.btnSalir2.Text = "SALIR";
             this.btnSalir2.UseVisualStyleBackColor = true;
@@ -78,38 +83,48 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnIngresoP
             // 
-            this.btnIngresoP.Location = new System.Drawing.Point(39, 324);
+            this.btnIngresoP.BackColor = System.Drawing.Color.Black;
+            this.btnIngresoP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresoP.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnIngresoP.Location = new System.Drawing.Point(96, 7);
             this.btnIngresoP.Name = "btnIngresoP";
-            this.btnIngresoP.Size = new System.Drawing.Size(99, 68);
+            this.btnIngresoP.Size = new System.Drawing.Size(156, 27);
             this.btnIngresoP.TabIndex = 5;
             this.btnIngresoP.Text = "INGRESO DE PRODUCTOS";
-            this.btnIngresoP.UseVisualStyleBackColor = true;
+            this.btnIngresoP.UseVisualStyleBackColor = false;
             this.btnIngresoP.Click += new System.EventHandler(this.btnIngresoP_Click);
             // 
             // btnFacturacion
             // 
-            this.btnFacturacion.Location = new System.Drawing.Point(361, 324);
+            this.btnFacturacion.BackColor = System.Drawing.Color.Black;
+            this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFacturacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnFacturacion.Location = new System.Drawing.Point(258, 4);
             this.btnFacturacion.Name = "btnFacturacion";
-            this.btnFacturacion.Size = new System.Drawing.Size(99, 68);
+            this.btnFacturacion.Size = new System.Drawing.Size(99, 30);
             this.btnFacturacion.TabIndex = 6;
             this.btnFacturacion.Text = "FACTURACIÓN";
-            this.btnFacturacion.UseVisualStyleBackColor = true;
+            this.btnFacturacion.UseVisualStyleBackColor = false;
             this.btnFacturacion.Click += new System.EventHandler(this.btnFacturacion_Click);
             // 
             // btnRegistroF
             // 
-            this.btnRegistroF.Location = new System.Drawing.Point(635, 324);
+            this.btnRegistroF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegistroF.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRegistroF.Location = new System.Drawing.Point(363, 4);
             this.btnRegistroF.Name = "btnRegistroF";
-            this.btnRegistroF.Size = new System.Drawing.Size(99, 68);
+            this.btnRegistroF.Size = new System.Drawing.Size(150, 30);
             this.btnRegistroF.TabIndex = 7;
             this.btnRegistroF.Text = "REGISTRO DE FACTURAS";
             this.btnRegistroF.UseVisualStyleBackColor = true;
             // 
             // btnIngresarU
             // 
-            this.btnIngresarU.Location = new System.Drawing.Point(632, 58);
+            this.btnIngresarU.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresarU.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnIngresarU.Location = new System.Drawing.Point(519, 4);
             this.btnIngresarU.Name = "btnIngresarU";
-            this.btnIngresarU.Size = new System.Drawing.Size(102, 58);
+            this.btnIngresarU.Size = new System.Drawing.Size(159, 30);
             this.btnIngresarU.TabIndex = 4;
             this.btnIngresarU.Text = "INGRESAR OTRO USUARIO";
             this.btnIngresarU.UseVisualStyleBackColor = true;
@@ -119,7 +134,8 @@ namespace Tienda_Inversiones_Panda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(858, 357);
             this.Controls.Add(this.btnRegistroF);
             this.Controls.Add(this.btnFacturacion);
             this.Controls.Add(this.btnIngresoP);

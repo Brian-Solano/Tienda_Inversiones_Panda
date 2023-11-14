@@ -117,5 +117,11 @@
   <ItemGroup>
     <None Include="Resources\password-icon-png-10.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gratis-png-boton-de-hamburguesa-barra-de-menu-iconos-de-computadora-linea-horizontal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone-trait-noir.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

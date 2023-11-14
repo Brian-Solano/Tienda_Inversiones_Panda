@@ -63,6 +63,27 @@ namespace Tienda_Inversiones_Panda.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gratis_png_boton_de_hamburguesa_barra_de_menu_iconos_de_computadora_linea_horizontal {
+            get {
+                object obj = ResourceManager.GetObject("gratis-png-boton-de-hamburguesa-barra-de-menu-iconos-de-computadora-linea-horizon" +
+                        "tal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icone_trait_noir {
+            get {
+                object obj = ResourceManager.GetObject("icone-trait-noir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jing_fm_profile_clipart_1153324 {
             get {
                 object obj = ResourceManager.GetObject("jing.fm-profile-clipart-1153324", resourceCulture);
