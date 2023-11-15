@@ -117,6 +117,7 @@ namespace Tienda_Inversiones_Panda
             this.btnRegistroF.TabIndex = 7;
             this.btnRegistroF.Text = "REGISTRO DE FACTURAS";
             this.btnRegistroF.UseVisualStyleBackColor = true;
+            this.btnRegistroF.Click += new System.EventHandler(this.btnRegistroF_Click);
             // 
             // btnIngresarU
             // 

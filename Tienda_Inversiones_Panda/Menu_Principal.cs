@@ -53,5 +53,12 @@ namespace Tienda_Inversiones_Panda
         {
 
         }
+
+        private void btnRegistroF_Click(object sender, EventArgs e)
+        {
+            Registro_de_Facturas RI =  new Registro_de_Facturas();
+            RI.Show();
+            this.Hide();
+        }
     }
 }

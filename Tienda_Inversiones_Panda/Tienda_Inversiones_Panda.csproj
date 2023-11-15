@@ -53,6 +53,12 @@
     <Compile Include="Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registro_de_Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro_de_Facturas.Designer.cs">
+      <DependentUpon>Registro_de_Facturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="Registo_de_Productos.resx">
       <DependentUpon>Registo_de_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro_de_Facturas.resx">
+      <DependentUpon>Registro_de_Facturas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
