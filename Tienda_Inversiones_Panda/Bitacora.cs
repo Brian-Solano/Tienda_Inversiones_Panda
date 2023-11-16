@@ -67,6 +67,11 @@ namespace Tienda_Inversiones_Panda
 
             MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK,
             MessageBoxIcon.Information);
+            // Limpiar campos de texto
+            txtId.Clear();
+            txtEncargado.Clear();
+            txtEstado.Clear();
+            txtTarea.Clear();
 
             string consulta = "select * from bitacora";
 
@@ -135,5 +140,35 @@ namespace Tienda_Inversiones_Panda
             this.Hide();
             formulario.Show();
         }
+
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridView1.SelectedRows[0]; // Obtén la fila seleccionada
+
+                // Accede a los valores de las celdas individuales dentro de la fila
+                string tarea = GetCellValue(row, "Tarea");
+                string encargado = GetCellValue(row, "Encargado");
+                string estado = GetCellValue(row, "Estado");
+                string Id = GetCellValue(row, "ID"); // Cambiado a string para manejar tanto números como texto
+
+                // Asigna los valores a los TextBoxes correspondientes
+                txtTarea.Text = tarea;
+                txtEncargado.Text = encargado;
+                txtEstado.Text = estado;
+                txtId.Text = Id;
+            }
+        }
+
+        // Método auxiliar para obtener el valor de una celda como cadena
+        private string GetCellValue(DataGridViewRow row, string columnName)
+        {
+            return row.Cells[columnName]?.Value?.ToString() ?? string.Empty;
+        }
+
+
+
     }
 }

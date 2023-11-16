@@ -43,6 +43,7 @@ namespace Tienda_Inversiones_Panda
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtFecha = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(470, 151);
+            this.btnGuardar.Location = new System.Drawing.Point(443, 151);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 5;
@@ -103,7 +104,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(573, 151);
+            this.btnEliminar.Location = new System.Drawing.Point(524, 151);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 6;
@@ -164,11 +165,22 @@ namespace Tienda_Inversiones_Panda
             this.dataGridView1.Size = new System.Drawing.Size(508, 144);
             this.dataGridView1.TabIndex = 14;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(614, 151);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 15;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Bitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.txtEstado);
@@ -208,5 +220,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.DateTimePicker txtFecha;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
