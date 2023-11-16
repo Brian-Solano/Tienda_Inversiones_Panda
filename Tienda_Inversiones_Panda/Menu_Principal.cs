@@ -60,5 +60,12 @@ namespace Tienda_Inversiones_Panda
             RI.Show();
             this.Hide();
         }
+
+        private void btnBitacora_Click(object sender, EventArgs e)
+        {
+            Bitacora BI = new Bitacora();
+            BI.Show();
+            this.Hide();
+        }
     }
 }
