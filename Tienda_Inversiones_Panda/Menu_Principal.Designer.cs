@@ -38,6 +38,7 @@ namespace Tienda_Inversiones_Panda
             this.btnRegistroF = new System.Windows.Forms.Button();
             this.btnIngresarU = new System.Windows.Forms.Button();
             this.btnBitacora = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblInicio
@@ -74,7 +75,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnSalir2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir2.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSalir2.Location = new System.Drawing.Point(754, 4);
+            this.btnSalir2.Location = new System.Drawing.Point(923, 6);
             this.btnSalir2.Name = "btnSalir2";
             this.btnSalir2.Size = new System.Drawing.Size(104, 28);
             this.btnSalir2.TabIndex = 3;
@@ -100,7 +101,7 @@ namespace Tienda_Inversiones_Panda
             this.btnFacturacion.BackColor = System.Drawing.Color.Black;
             this.btnFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFacturacion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFacturacion.Location = new System.Drawing.Point(327, 4);
+            this.btnFacturacion.Location = new System.Drawing.Point(497, 4);
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(99, 30);
             this.btnFacturacion.TabIndex = 6;
@@ -112,7 +113,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnRegistroF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistroF.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegistroF.Location = new System.Drawing.Point(432, 4);
+            this.btnRegistroF.Location = new System.Drawing.Point(602, 4);
             this.btnRegistroF.Name = "btnRegistroF";
             this.btnRegistroF.Size = new System.Drawing.Size(150, 30);
             this.btnRegistroF.TabIndex = 7;
@@ -124,7 +125,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnIngresarU.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarU.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIngresarU.Location = new System.Drawing.Point(588, 4);
+            this.btnIngresarU.Location = new System.Drawing.Point(758, 4);
             this.btnIngresarU.Name = "btnIngresarU";
             this.btnIngresarU.Size = new System.Drawing.Size(159, 30);
             this.btnIngresarU.TabIndex = 4;
@@ -137,7 +138,7 @@ namespace Tienda_Inversiones_Panda
             this.btnBitacora.BackColor = System.Drawing.Color.Black;
             this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBitacora.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBitacora.Location = new System.Drawing.Point(222, 4);
+            this.btnBitacora.Location = new System.Drawing.Point(392, 5);
             this.btnBitacora.Name = "btnBitacora";
             this.btnBitacora.Size = new System.Drawing.Size(99, 30);
             this.btnBitacora.TabIndex = 8;
@@ -145,12 +146,25 @@ namespace Tienda_Inversiones_Panda
             this.btnBitacora.UseVisualStyleBackColor = false;
             this.btnBitacora.Click += new System.EventHandler(this.btnBitacora_Click);
             // 
+            // btnClientes
+            // 
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClientes.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClientes.Location = new System.Drawing.Point(219, 9);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Size = new System.Drawing.Size(75, 23);
+            this.btnClientes.TabIndex = 9;
+            this.btnClientes.Text = "CLIENTES";
+            this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(858, 357);
+            this.ClientSize = new System.Drawing.Size(1027, 515);
+            this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnBitacora);
             this.Controls.Add(this.btnRegistroF);
             this.Controls.Add(this.btnFacturacion);
@@ -179,5 +193,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnRegistroF;
         private System.Windows.Forms.Button btnIngresarU;
         private System.Windows.Forms.Button btnBitacora;
+        private System.Windows.Forms.Button btnClientes;
     }
 }

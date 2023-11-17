@@ -67,5 +67,12 @@ namespace Tienda_Inversiones_Panda
             BI.Show();
             this.Hide();
         }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            Clientes CL = new Clientes();
+            CL.Show();
+            this.Hide();
+        }
     }
 }
