@@ -168,7 +168,9 @@ namespace Tienda_Inversiones_Panda
             return row.Cells[columnName]?.Value?.ToString() ?? string.Empty;
         }
 
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
