@@ -74,5 +74,12 @@ namespace Tienda_Inversiones_Panda
             CL.Show();
             this.Hide();
         }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+            Empleado EM = new Empleado();
+            EM.Show();
+            this.Hide();
+        }
     }
 }
