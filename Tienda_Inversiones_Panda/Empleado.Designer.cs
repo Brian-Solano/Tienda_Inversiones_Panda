@@ -45,6 +45,7 @@ namespace Tienda_Inversiones_Panda
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtArea = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@ namespace Tienda_Inversiones_Panda
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "ELIMINAR";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAtras
             // 
@@ -181,11 +183,22 @@ namespace Tienda_Inversiones_Panda
             this.txtid.Size = new System.Drawing.Size(198, 20);
             this.txtid.TabIndex = 16;
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(525, 169);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.TabIndex = 17;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.txtArea);
             this.Controls.Add(this.txtApellido);
@@ -229,5 +242,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.TextBox txtid;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

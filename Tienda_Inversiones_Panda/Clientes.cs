@@ -94,6 +94,15 @@ namespace Tienda_Inversiones_Panda
 
 
             MessageBox.Show("Se ha Guardado el dato en la tabla Clientes");
+
+            // Limpiar campos de texto
+            txtId.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDesc.Clear();
+            txtDui.Clear();
+            txtTel.Clear();
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -118,14 +127,7 @@ namespace Tienda_Inversiones_Panda
 
                 MessageBox.Show("Eliminado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Limpiar campos de texto
-                txtId.Clear();
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtDesc.Clear();
-                txtDui.Clear();
-                txtTel.Clear();
-
+               
                 // Recargar datos en el DataGridView
                 string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
                 string query = "SELECT * FROM cliente";
@@ -143,6 +145,15 @@ namespace Tienda_Inversiones_Panda
             {
                 MessageBox.Show("No se ha podido hacer la eliminación. Error: " + ex.Message);
             }
+
+            // Limpiar campos de texto
+            txtId.Clear();
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtDesc.Clear();
+            txtDui.Clear();
+            txtTel.Clear();
+
         }
 
 
