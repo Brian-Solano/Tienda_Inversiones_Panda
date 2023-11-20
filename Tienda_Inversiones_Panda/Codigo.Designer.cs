@@ -48,9 +48,9 @@ namespace Tienda_Inversiones_Panda
             this.lblCodigoCl.AutoSize = true;
             this.lblCodigoCl.Location = new System.Drawing.Point(73, 55);
             this.lblCodigoCl.Name = "lblCodigoCl";
-            this.lblCodigoCl.Size = new System.Drawing.Size(97, 13);
+            this.lblCodigoCl.Size = new System.Drawing.Size(111, 13);
             this.lblCodigoCl.TabIndex = 0;
-            this.lblCodigoCl.Text = "CODIGO CLIENTE";
+            this.lblCodigoCl.Text = "CODIGO EMPLEADO";
             // 
             // lblNombre
             // 
