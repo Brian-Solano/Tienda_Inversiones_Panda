@@ -48,25 +48,48 @@ namespace Tienda_Inversiones_Panda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // ... (código existente)
+
+            // Generar el código automáticamente
+            string codigoEmpleado = GenerarCodigoEmpleado();
+            txtid.Text = codigoEmpleado;
+
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO code(Codigo,Nombre_de_Cliente, Area) VALUES (?Codigo,?Nombre_de_Cliente, ?Area)";
+            string myInsertQuery = "INSERT INTO code(Codigo,Nombre_de_Empleado, Area) VALUES (?Codigo,?Nombre_de_Empleado, ?Area)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
             myCommand.Parameters.Add("?Codigo", MySqlDbType.VarChar, 30).Value = txtid.Text;
-            myCommand.Parameters.Add("?Nombre_de_Cliente", MySqlDbType.VarChar, 30).Value = txtNomC.Text;
+            myCommand.Parameters.Add("?Nombre_de_Empleado", MySqlDbType.VarChar, 30).Value = txtNomC.Text;
             myCommand.Parameters.Add("?Area", MySqlDbType.VarChar, 30).Value = txtArea.Text;
-          
-
-
 
             myCommand.Connection = myConnection;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
 
-            MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+            MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Actualizar la tabla después de agregar un nuevo registro
+            ActualizarTabla();
+
+            txtNomC.Clear();
+            txtid.Clear();
+            txtArea.Clear();
+        }
+
+        private string GenerarCodigoEmpleado()
+        {
+            // Puedes personalizar esta lógica según tus necesidades
+            Random random = new Random();
+            int numeroAleatorio = random.Next(1000, 9999); // Número aleatorio de 4 dígitos
+            string codigoEmpleado = $"EMP-{numeroAleatorio}";
+
+            return codigoEmpleado;
+        }
+
+        // Método para actualizar la tabla
+        private void ActualizarTabla()
+        {
             string consulta = "select * from code";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
@@ -75,15 +98,9 @@ namespace Tienda_Inversiones_Panda
             comando.Fill(ds, "inventario");
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "inventario";
-
-
-
-            MessageBox.Show("Se ha Guardado el dato en la tabla Clientes");
-
-            txtNomC.Clear();
-            txtid.Clear();
-            txtArea.Clear();
         }
+
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -140,7 +157,7 @@ namespace Tienda_Inversiones_Panda
 
                 // Accede a los valores de las celdas individuales dentro de la fila
               
-                string nombre = GetCellValue(row, "Nombre_de_Cliente");
+                string nombre = GetCellValue(row, "Nombre_de_Empleado");
                 string area = GetCellValue(row, "Area");
                 string codigo = GetCellValue(row, "Codigo"); // Cambiado a string para manejar tanto números como texto
 

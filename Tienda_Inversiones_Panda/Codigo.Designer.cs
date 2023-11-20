@@ -57,9 +57,9 @@ namespace Tienda_Inversiones_Panda
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(73, 140);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(120, 13);
+            this.lblNombre.Size = new System.Drawing.Size(134, 13);
             this.lblNombre.TabIndex = 1;
-            this.lblNombre.Text = "NOMBRE DE CLIENTE";
+            this.lblNombre.Text = "NOMBRE DE EMPLEADO";
             // 
             // lblArea
             // 
@@ -74,6 +74,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.txtid.Location = new System.Drawing.Point(76, 80);
             this.txtid.Name = "txtid";
+            this.txtid.ReadOnly = true;
             this.txtid.Size = new System.Drawing.Size(142, 20);
             this.txtid.TabIndex = 3;
             // 
