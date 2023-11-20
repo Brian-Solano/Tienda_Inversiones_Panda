@@ -81,5 +81,12 @@ namespace Tienda_Inversiones_Panda
             EM.Show();
             this.Hide();
         }
+
+        private void btnCodigo_Click(object sender, EventArgs e)
+        {
+            Codigo CO = new Codigo();
+            CO.Show();
+            this.Hide();
+        }
     }
 }

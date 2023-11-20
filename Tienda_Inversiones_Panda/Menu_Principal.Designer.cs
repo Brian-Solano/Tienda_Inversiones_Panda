@@ -40,13 +40,14 @@ namespace Tienda_Inversiones_Panda
             this.btnBitacora = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
+            this.btnCodigo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
             this.lblInicio.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblInicio.Location = new System.Drawing.Point(12, 9);
+            this.lblInicio.Location = new System.Drawing.Point(12, 13);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(39, 13);
             this.lblInicio.TabIndex = 0;
@@ -76,7 +77,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnSalir2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir2.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSalir2.Location = new System.Drawing.Point(923, 6);
+            this.btnSalir2.Location = new System.Drawing.Point(1075, 6);
             this.btnSalir2.Name = "btnSalir2";
             this.btnSalir2.Size = new System.Drawing.Size(104, 28);
             this.btnSalir2.TabIndex = 3;
@@ -114,7 +115,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnRegistroF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistroF.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegistroF.Location = new System.Drawing.Point(602, 4);
+            this.btnRegistroF.Location = new System.Drawing.Point(634, 5);
             this.btnRegistroF.Name = "btnRegistroF";
             this.btnRegistroF.Size = new System.Drawing.Size(150, 30);
             this.btnRegistroF.TabIndex = 7;
@@ -126,7 +127,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnIngresarU.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarU.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIngresarU.Location = new System.Drawing.Point(758, 4);
+            this.btnIngresarU.Location = new System.Drawing.Point(808, 5);
             this.btnIngresarU.Name = "btnIngresarU";
             this.btnIngresarU.Size = new System.Drawing.Size(159, 30);
             this.btnIngresarU.TabIndex = 4;
@@ -171,12 +172,25 @@ namespace Tienda_Inversiones_Panda
             this.btnEmpleados.UseVisualStyleBackColor = true;
             this.btnEmpleados.Click += new System.EventHandler(this.btnEmpleados_Click);
             // 
+            // btnCodigo
+            // 
+            this.btnCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCodigo.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCodigo.Location = new System.Drawing.Point(973, 5);
+            this.btnCodigo.Name = "btnCodigo";
+            this.btnCodigo.Size = new System.Drawing.Size(116, 29);
+            this.btnCodigo.TabIndex = 11;
+            this.btnCodigo.Text = "CODIGO";
+            this.btnCodigo.UseVisualStyleBackColor = true;
+            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1027, 515);
+            this.ClientSize = new System.Drawing.Size(1173, 593);
+            this.Controls.Add(this.btnCodigo);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnBitacora);
@@ -209,5 +223,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnBitacora;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnEmpleados;
+        private System.Windows.Forms.Button btnCodigo;
     }
 }
