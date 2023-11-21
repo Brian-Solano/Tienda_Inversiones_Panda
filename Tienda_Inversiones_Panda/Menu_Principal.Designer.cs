@@ -41,6 +41,8 @@ namespace Tienda_Inversiones_Panda
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnCodigo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInicio
@@ -57,7 +59,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(358, 139);
+            this.label2.Location = new System.Drawing.Point(726, 253);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 1;
@@ -67,7 +69,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(303, 208);
+            this.label3.Location = new System.Drawing.Point(679, 317);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 13);
             this.label3.TabIndex = 2;
@@ -184,12 +186,23 @@ namespace Tienda_Inversiones_Panda
             this.btnCodigo.UseVisualStyleBackColor = true;
             this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.panda;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 435);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(257, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1173, 593);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCodigo);
             this.Controls.Add(this.btnEmpleados);
             this.Controls.Add(this.btnClientes);
@@ -205,6 +218,7 @@ namespace Tienda_Inversiones_Panda
             this.Name = "Menu_Principal";
             this.Text = "Menu_Principal";
             this.Load += new System.EventHandler(this.Menu_Principal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +238,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnCodigo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

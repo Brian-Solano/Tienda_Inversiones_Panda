@@ -48,7 +48,7 @@ namespace Tienda_Inversiones_Panda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // ... (código existente)
+           
 
             // Generar el código automáticamente
             string codigoEmpleado = GenerarCodigoEmpleado();
@@ -79,7 +79,7 @@ namespace Tienda_Inversiones_Panda
 
         private string GenerarCodigoEmpleado()
         {
-            // Puedes personalizar esta lógica según tus necesidades
+            
             Random random = new Random();
             int numeroAleatorio = random.Next(1000, 9999); // Número aleatorio de 4 dígitos
             string codigoEmpleado = $"EMP-{numeroAleatorio}";

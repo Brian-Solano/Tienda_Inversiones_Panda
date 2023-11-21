@@ -94,6 +94,16 @@ namespace Tienda_Inversiones_Panda.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap panda {
+            get {
+                object obj = ResourceManager.GetObject("panda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap password_icon_png_10 {
             get {
                 object obj = ResourceManager.GetObject("password-icon-png-10", resourceCulture);
