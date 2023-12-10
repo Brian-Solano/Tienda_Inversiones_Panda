@@ -279,10 +279,10 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnActualizar;
-        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.RadioButton RavId;
         private System.Windows.Forms.RadioButton RavNombre;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

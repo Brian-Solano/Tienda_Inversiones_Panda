@@ -56,57 +56,112 @@ namespace Tienda_Inversiones_Panda
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Form formulario = new Menu_Principal();
-            this.Hide();
+            this.Close();
             formulario.Show();
         }
 
+        private ErrorProvider errorProvider = new ErrorProvider();
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO cliente(Nombre, Apellido, DUI, Telefono, Fecha_de_Nacimiento,  Direccion, Id) VALUES (?Nombre,?Apellido,?DUI,?Telefono,?Fecha_de_Nacimiento,?Direccion, ?Id)";
-            MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+            // Limpiar cualquier error previo
+            errorProvider.Clear();
 
-            myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 30).Value = txtNombre.Text;
-            myCommand.Parameters.Add("?Apellido", MySqlDbType.VarChar, 30).Value = txtApellido.Text;
-            myCommand.Parameters.Add("?DUI", MySqlDbType.VarChar, 30).Value = txtDui.Text;
-            myCommand.Parameters.Add("?Telefono", MySqlDbType.VarChar, 50).Value = txtTel.Text;
-            myCommand.Parameters.Add("?Direccion", MySqlDbType.VarChar, 30).Value = txtDesc.Text;
-            myCommand.Parameters.Add("?Fecha_de_Nacimiento", MySqlDbType.VarChar, 30).Value = txtTimer.Text;
-            myCommand.Parameters.Add("?Id", MySqlDbType.VarChar, 30).Value = txtId.Text;
+            // Verificar si hay campos vacíos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtDui.Text) || string.IsNullOrWhiteSpace(txtTel.Text) ||
+                string.IsNullOrWhiteSpace(txtDesc.Text) || string.IsNullOrWhiteSpace(txtTimer.Text) ||
+                string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                // Mostrar ícono de advertencia y mensaje en los campos vacíos
+                MostrarAdvertencia("Por favor, complete todos los campos antes de guardar.");
+                return;
+            }
 
-            myCommand.Connection = myConnection;
-            myConnection.Open();
-            myCommand.ExecuteNonQuery();
-            myCommand.Connection.Close();
+            // Insertar nuevo cliente en la base de datos
+            using (MySqlConnection myConnection = new MySqlConnection(cadena_conexion))
+            {
+                string myInsertQuery = "INSERT INTO cliente(Nombre, Apellido, DUI, Telefono, Fecha_de_Nacimiento, Direccion, Id) VALUES (?Nombre,?Apellido,?DUI,?Telefono,?Fecha_de_Nacimiento,?Direccion, ?Id)";
+                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
-            MessageBox.Show("Cliente agregado con éxito", "Ok", MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+                myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 30).Value = txtNombre.Text;
+                myCommand.Parameters.Add("?Apellido", MySqlDbType.VarChar, 30).Value = txtApellido.Text;
+                myCommand.Parameters.Add("?DUI", MySqlDbType.VarChar, 30).Value = txtDui.Text;
+                myCommand.Parameters.Add("?Telefono", MySqlDbType.VarChar, 50).Value = txtTel.Text;
+                myCommand.Parameters.Add("?Direccion", MySqlDbType.VarChar, 30).Value = txtDesc.Text;
+                myCommand.Parameters.Add("?Fecha_de_Nacimiento", MySqlDbType.VarChar, 30).Value = txtTimer.Text;
+                myCommand.Parameters.Add("?Id", MySqlDbType.VarChar, 30).Value = txtId.Text;
 
-            string consulta = "select * from cliente";
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
 
-            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-            MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
-            System.Data.DataSet ds = new System.Data.DataSet();
-            comando.Fill(ds, "inventario");
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "inventario";
+                MessageBox.Show("Cliente agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                // Actualizar el DataGridView con todos los clientes
+                ActualizarDataGridView();
+            }
 
+            // Limpiar campos de texto después de guardar
+            LimpiarCamposTexto();
+        }
 
-            MessageBox.Show("Se ha Guardado el dato en la tabla Clientes");
+        private void ActualizarDataGridView()
+        {
+            string consulta = "SELECT * FROM cliente";
 
-            // Limpiar campos de texto
+            using (MySqlConnection conexion = new MySqlConnection(cadena_conexion))
+            {
+                MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                comando.Fill(ds, "inventario");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "inventario";
+            }
+        }
+
+        private void LimpiarCamposTexto()
+        {
+            // Limpiar los TextBox u otros controles según sea necesario
             txtId.Clear();
             txtNombre.Clear();
             txtApellido.Clear();
             txtDesc.Clear();
             txtDui.Clear();
             txtTel.Clear();
-
+         
         }
+
+        private void MostrarAdvertencia(string mensaje)
+        {
+            // Mostrar un ícono de advertencia y mensaje
+            errorProvider.SetError(txtNombre, mensaje);
+            errorProvider.SetError(txtApellido, mensaje);
+            errorProvider.SetError(txtDui, mensaje);
+            errorProvider.SetError(txtTel, mensaje);
+            errorProvider.SetError(txtDesc, mensaje);
+            errorProvider.SetError(txtTimer, mensaje);
+            errorProvider.SetError(txtId, mensaje);
+        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Limpiar cualquier error previo
+            errorProvider.Clear();
+
+            // Verificar si hay campos vacíos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtDui.Text) || string.IsNullOrWhiteSpace(txtTel.Text) ||
+                string.IsNullOrWhiteSpace(txtDesc.Text) || string.IsNullOrWhiteSpace(txtTimer.Text) ||
+                string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                // Mostrar ícono de advertencia y mensaje en los campos vacíos
+                MostrarAdvertencia("Por favor, complete todos los campos antes de guardar.");
+                return;
+            }
+
             try
             {
                 string myConnectionString = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
@@ -190,6 +245,11 @@ namespace Tienda_Inversiones_Panda
         private string GetCellValue(DataGridViewRow row, string columnName)
         {
             return row.Cells[columnName]?.Value?.ToString() ?? string.Empty;
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

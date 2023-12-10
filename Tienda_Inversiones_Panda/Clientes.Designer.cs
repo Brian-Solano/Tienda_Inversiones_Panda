@@ -164,6 +164,7 @@ namespace Tienda_Inversiones_Panda
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(215, 20);
             this.txtId.TabIndex = 13;
+            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // btnNuevo
             // 

@@ -137,7 +137,7 @@ namespace Tienda_Inversiones_Panda
         private void btnAtras_Click(object sender, EventArgs e)
         {
             Form formulario = new Menu_Principal();
-            this.Hide();
+            this.Close();
             formulario.Show();
         }
 

@@ -56,7 +56,7 @@ namespace Tienda_Inversiones_Panda
         private void btnatras_Click(object sender, EventArgs e)
         {
            Form formulario = new Menu_Principal();
-           this.Hide();
+           this.Close();
             formulario.Show();
         }
 
@@ -75,46 +75,87 @@ namespace Tienda_Inversiones_Panda
 
         }
 
+
+        private ErrorProvider errorProvider = new ErrorProvider();
+
         private void btnIngre_Click(object sender, EventArgs e)
         {
-            MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO producto(Nombre, Distribuidor, Disponibles, ID) VALUES (?Nombre, ?Distribuidor, ?Disponibles, ?ID)";
-            MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+            // Limpiar cualquier error previo
+            errorProvider.Clear();
 
-            myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 40).Value = txtNombre.Text;
-            myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 45).Value = txtDistri.Text;
-            myCommand.Parameters.Add("?Disponibles", MySqlDbType.Int32, 50).Value = txtDispo.Text;
+            // Verificar si hay campos vacíos
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) || string.IsNullOrWhiteSpace(txtDistri.Text) || string.IsNullOrWhiteSpace(txtDispo.Text))
+            {
+                // Mostrar ícono de advertencia y mensaje en los campos vacíos
+                MostrarAdvertencia("Por favor, complete todos los campos antes de ingresar.");
+                return;
+            }
 
-            // Obtiene el último ID de la base de datos y agregar 1
-            string getLastIdQuery = "SELECT MAX(ID) FROM producto";
-            MySqlCommand getLastIdCommand = new MySqlCommand(getLastIdQuery, myConnection);
-            myConnection.Open();
-            var result = getLastIdCommand.ExecuteScalar();
-            myConnection.Close();
-            int newId = result == DBNull.Value ? 1 : Convert.ToInt32(result) + 1;
+            // Insertar nuevo producto en la base de datos
+            using (MySqlConnection myConnection = new MySqlConnection(cadena_conexion))
+            {
+                string myInsertQuery = "INSERT INTO producto(Nombre, Distribuidor, Disponibles, ID) VALUES (?Nombre, ?Distribuidor, ?Disponibles, ?ID)";
+                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
-            // Asignar el nuevo ID al parámetro y al campo de texto correspondiente
-            myCommand.Parameters.Add("?ID", MySqlDbType.Int32, 40).Value = newId;
-            txtId.Text = newId.ToString();
+                myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 40).Value = txtNombre.Text;
+                myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 45).Value = txtDistri.Text;
+                myCommand.Parameters.Add("?Disponibles", MySqlDbType.Int32, 50).Value = txtDispo.Text;
 
-            myCommand.Connection = myConnection;
-            myConnection.Open();
-            myCommand.ExecuteNonQuery();
-            myConnection.Close();
+                // Obtener el último ID de la base de datos y agregar 1
+                string getLastIdQuery = "SELECT MAX(ID) FROM producto";
+                MySqlCommand getLastIdCommand = new MySqlCommand(getLastIdQuery, myConnection);
+                myConnection.Open();
+                var result = getLastIdCommand.ExecuteScalar();
+                myConnection.Close();
+                int newId = result == DBNull.Value ? 1 : Convert.ToInt32(result) + 1;
 
-            MessageBox.Show("Productos agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Asignar el nuevo ID al parámetro y al campo de texto correspondiente
+                myCommand.Parameters.Add("?ID", MySqlDbType.Int32, 40).Value = newId;
+                txtId.Text = newId.ToString();
 
-           
-            string consulta = "select * from producto";
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myConnection.Close();
 
-            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-            MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
-            System.Data.DataSet ds = new System.Data.DataSet();
-            comando.Fill(ds, "inventario");
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "inventario";
+                // Limpiar los datos después de ingresar
+                LimpiarDatos();
 
+                // Actualizar el DataGridView con todos los productos
+                ActualizarDataGridView();
+            }
         }
+
+        private void LimpiarDatos()
+        {
+            // Limpiar los TextBox u otros controles según sea necesario
+            txtNombre.Text = string.Empty;
+            txtDistri.Text = string.Empty;
+            txtDispo.Text = string.Empty;
+        }
+
+        private void ActualizarDataGridView()
+        {
+            string consulta = "SELECT * FROM producto";
+
+            using (MySqlConnection conexion = new MySqlConnection(cadena_conexion))
+            {
+                MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                comando.Fill(ds, "inventario");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "inventario";
+            }
+        }
+
+        private void MostrarAdvertencia(string mensaje)
+        {
+            // Mostrar un ícono de advertencia y mensaje
+            errorProvider.SetError(txtNombre, mensaje);
+            errorProvider.SetError(txtDistri, mensaje);
+            errorProvider.SetError(txtDispo, mensaje);
+        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -153,7 +194,8 @@ namespace Tienda_Inversiones_Panda
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
+            //limpiar datos
+            LimpiarDatos();
         }
 
         private void txtIngresarProducto_TextChanged(object sender, EventArgs e)

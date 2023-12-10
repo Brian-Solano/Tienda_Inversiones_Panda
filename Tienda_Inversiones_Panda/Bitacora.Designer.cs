@@ -88,9 +88,9 @@ namespace Tienda_Inversiones_Panda
             this.lblId.AutoSize = true;
             this.lblId.Location = new System.Drawing.Point(221, 406);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.Size = new System.Drawing.Size(49, 13);
             this.lblId.TabIndex = 4;
-            this.lblId.Text = "ID";
+            this.lblId.Text = "CODIGO";
             // 
             // btnGuardar
             // 

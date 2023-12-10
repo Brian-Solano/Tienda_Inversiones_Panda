@@ -48,7 +48,7 @@ namespace Tienda_Inversiones_Panda
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
-            this.lblInicio.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblInicio.ForeColor = System.Drawing.Color.Purple;
             this.lblInicio.Location = new System.Drawing.Point(12, 13);
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(39, 13);
@@ -58,25 +58,28 @@ namespace Tienda_Inversiones_Panda
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(726, 253);
+            this.label2.Location = new System.Drawing.Point(769, 249);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(116, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "¡BIENVENIDO!";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(679, 317);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 13);
+            this.label3.Size = new System.Drawing.Size(305, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "SELECCIONE LO QUE DESEE HACER";
             // 
             // btnSalir2
             // 
+            this.btnSalir2.BackColor = System.Drawing.Color.Red;
             this.btnSalir2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalir2.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSalir2.Location = new System.Drawing.Point(1075, 6);
@@ -84,7 +87,7 @@ namespace Tienda_Inversiones_Panda
             this.btnSalir2.Size = new System.Drawing.Size(104, 28);
             this.btnSalir2.TabIndex = 3;
             this.btnSalir2.Text = "SALIR";
-            this.btnSalir2.UseVisualStyleBackColor = true;
+            this.btnSalir2.UseVisualStyleBackColor = false;
             this.btnSalir2.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnIngresoP
@@ -189,9 +192,9 @@ namespace Tienda_Inversiones_Panda
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.panda;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 435);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 181);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(257, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(556, 238);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;

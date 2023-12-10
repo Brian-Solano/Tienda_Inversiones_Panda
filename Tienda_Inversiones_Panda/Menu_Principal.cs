@@ -33,7 +33,7 @@ namespace Tienda_Inversiones_Panda
         {
             Registo_de_Productos RP = new Registo_de_Productos();
             RP.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void Menu_Principal_Load(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Tienda_Inversiones_Panda
 
             Facturacion FT = new Facturacion();
             FT.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,35 +58,35 @@ namespace Tienda_Inversiones_Panda
         {
             Registro_de_Facturas RI =  new Registro_de_Facturas();
             RI.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnBitacora_Click(object sender, EventArgs e)
         {
             Bitacora BI = new Bitacora();
             BI.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             Clientes CL = new Clientes();
             CL.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
             Empleado EM = new Empleado();
             EM.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void btnCodigo_Click(object sender, EventArgs e)
         {
             Codigo CO = new Codigo();
             CO.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }
