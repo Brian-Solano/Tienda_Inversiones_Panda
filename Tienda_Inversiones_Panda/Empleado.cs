@@ -48,6 +48,19 @@ namespace Tienda_Inversiones_Panda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Validar espacios en blanco en los campos de texto
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellido.Text) ||
+                string.IsNullOrWhiteSpace(txtTurno.Text) ||
+                string.IsNullOrWhiteSpace(txtTurno1.Text) ||
+                string.IsNullOrWhiteSpace(txtArea.Text) ||
+                string.IsNullOrWhiteSpace(txtid.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Resto del código para la inserción en la base de datos
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
             string myInsertQuery = "INSERT INTO empleados(Nombre, Apellido, Turno_de, Turno_a, Area, Id) VALUES (?Nombre, ?Apellido, ?Turno_de, ?Turno_a, ?Area, ?Id)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
@@ -59,40 +72,53 @@ namespace Tienda_Inversiones_Panda
             myCommand.Parameters.Add("?Area", MySqlDbType.VarChar, 30).Value = txtArea.Text;
             myCommand.Parameters.Add("?Id", MySqlDbType.VarChar, 30).Value = txtid.Text;
 
-
             myCommand.Connection = myConnection;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
 
             MessageBox.Show("Empleados agregado con éxito", "Ok", MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+                MessageBoxIcon.Information);
 
-            string consulta = "select * from empleados";
-
-            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-            MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
-            System.Data.DataSet ds = new System.Data.DataSet();
-            comando.Fill(ds, "inventario");
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "inventario";
-
-
-
-            MessageBox.Show("Se ha Guardado el dato en la tabla Clientes");
+            // Actualizar el DataGridView después de la inserción
+            UpdateDataGridView();
 
             // Limpiar campos de texto
             txtNombre.Clear();
             txtApellido.Clear();
             txtArea.Clear();
             txtid.Clear();
-        
         }
+
+        // Método para actualizar el DataGridView con los datos de la base de datos
+        private void UpdateDataGridView()
+        {
+            string consulta = "SELECT * FROM empleados";
+
+            using (MySqlConnection conexion = new MySqlConnection(cadena_conexion))
+            {
+                using (MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion))
+                {
+                    System.Data.DataSet ds = new System.Data.DataSet();
+                    comando.Fill(ds, "inventario");
+                    dataGridView1.DataSource = ds;
+                    dataGridView1.DataMember = "inventario";
+                }
+            }
+        }
+
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
+                // Verificar si se ha ingresado un ID antes de intentar eliminar
+                if (string.IsNullOrEmpty(txtid.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese un ID antes de intentar eliminar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Salir del método si no se ha ingresado un ID
+                }
+
                 string myConnectionString = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
 
                 using (MySqlConnection myConnection = new MySqlConnection(myConnectionString))
@@ -111,30 +137,18 @@ namespace Tienda_Inversiones_Panda
 
                 MessageBox.Show("Eliminado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-             
+                // Resto del código para actualizar el DataGridView
 
-                string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
-                string query = "SELECT * FROM empleados";
-
-                using (MySqlConnection cnn = new MySqlConnection(cad))
-                {
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "inventario");
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "inventario";
-                }
+                // Limpiar campos de texto
+                txtNombre.Clear();
+                txtApellido.Clear();
+                txtArea.Clear();
+                txtid.Clear();
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("No se ha podido hacer la eliminación. Error: " + ex.Message);
+                MessageBox.Show("No se ha podido hacer la eliminación. Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // Limpiar campos de texto
-            txtNombre.Clear();
-            txtApellido.Clear();
-            txtArea.Clear();
-            txtid.Clear();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
