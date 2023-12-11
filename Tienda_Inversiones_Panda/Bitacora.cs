@@ -48,25 +48,32 @@ namespace Tienda_Inversiones_Panda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Validar que no haya campos vacíos en los campos de texto
+            if (string.IsNullOrWhiteSpace(txtTarea.Text) || string.IsNullOrWhiteSpace(txtEncargado.Text) ||
+                string.IsNullOrWhiteSpace(txtId.Text) || string.IsNullOrWhiteSpace(txtFecha.Text) ||
+                string.IsNullOrWhiteSpace(txtEstado.Text))
+            {
+                MessageBox.Show("No se permiten campos vacíos en los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Detener la ejecución si hay campos vacíos
+            }
+
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
             string myInsertQuery = "INSERT INTO bitacora(Tarea, Encargado, Id, Fecha, Estado) VALUES (?Tarea, ?Encargado, ?Id, ?Fecha, ?Estado)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
-            myCommand.Parameters.Add("?Tarea", MySqlDbType.VarChar, 30).Value = txtTarea.Text;
-            myCommand.Parameters.Add("?Encargado", MySqlDbType.VarChar, 30).Value = txtEncargado.Text;
-            myCommand.Parameters.Add("?Id", MySqlDbType.VarChar, 30).Value = txtId.Text;
-            myCommand.Parameters.Add("?Fecha", MySqlDbType.VarChar, 30).Value = txtFecha.Text;
-            myCommand.Parameters.Add("?Estado", MySqlDbType.VarChar, 50).Value = txtEstado.Text;
-
-
+            myCommand.Parameters.Add("?Tarea", MySqlDbType.VarChar, 30).Value = txtTarea.Text.Trim();
+            myCommand.Parameters.Add("?Encargado", MySqlDbType.VarChar, 30).Value = txtEncargado.Text.Trim();
+            myCommand.Parameters.Add("?Id", MySqlDbType.VarChar, 30).Value = txtId.Text.Trim();
+            myCommand.Parameters.Add("?Fecha", MySqlDbType.VarChar, 30).Value = txtFecha.Text.Trim();
+            myCommand.Parameters.Add("?Estado", MySqlDbType.VarChar, 50).Value = txtEstado.Text.Trim();
 
             myCommand.Connection = myConnection;
             myConnection.Open();
             myCommand.ExecuteNonQuery();
             myCommand.Connection.Close();
 
-            MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK,
-            MessageBoxIcon.Information);
+            MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             // Limpiar campos de texto
             txtId.Clear();
             txtEncargado.Clear();
@@ -82,13 +89,20 @@ namespace Tienda_Inversiones_Panda
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "inventario";
 
-
-
             MessageBox.Show("Se ha Guardado el dato en la tabla");
         }
 
+
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que se haya seleccionado un ID antes de intentar eliminar
+            if (string.IsNullOrWhiteSpace(txtId.Text))
+            {
+                MessageBox.Show("Por favor, seleccione un registro antes de eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 string myConnectionString = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
@@ -110,10 +124,10 @@ namespace Tienda_Inversiones_Panda
                 MessageBox.Show("Eliminado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 // Limpiar campos de texto
-                txtId.Clear();  
-                txtEncargado.Clear(); 
-                txtEstado.Clear();    
-                txtTarea.Clear();  
+                txtId.Clear();
+                txtEncargado.Clear();
+                txtEstado.Clear();
+                txtTarea.Clear();
 
                 string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
                 string query = "SELECT * FROM bitacora";
@@ -132,6 +146,8 @@ namespace Tienda_Inversiones_Panda
                 MessageBox.Show("No se ha podido hacer la eliminación. Error: " + ex.Message);
             }
         }
+
+
 
 
         private void btnAtras_Click(object sender, EventArgs e)

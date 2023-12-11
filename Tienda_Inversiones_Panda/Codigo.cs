@@ -48,26 +48,44 @@ namespace Tienda_Inversiones_Panda
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-           
-
             // Generar el código automáticamente
             string codigoEmpleado = GenerarCodigoEmpleado();
             txtid.Text = codigoEmpleado;
 
+            // Eliminar espacios en blanco al principio y al final de las cadenas
+            string nombreEmpleado = txtNomC.Text.Trim();
+            string area = txtArea.Text.Trim();
+
+            // Validar que los campos no estén en blanco después de eliminar espacios
+            if (string.IsNullOrWhiteSpace(nombreEmpleado) || string.IsNullOrWhiteSpace(area))
+            {
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string myInsertQuery = "INSERT INTO code(Codigo,Nombre_de_Empleado, Area) VALUES (?Codigo,?Nombre_de_Empleado, ?Area)";
+            string myInsertQuery = "INSERT INTO code(Codigo, Nombre_de_Empleado, Area) VALUES (?Codigo, ?Nombre_de_Empleado, ?Area)";
             MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
             myCommand.Parameters.Add("?Codigo", MySqlDbType.VarChar, 30).Value = txtid.Text;
-            myCommand.Parameters.Add("?Nombre_de_Empleado", MySqlDbType.VarChar, 30).Value = txtNomC.Text;
-            myCommand.Parameters.Add("?Area", MySqlDbType.VarChar, 30).Value = txtArea.Text;
+            myCommand.Parameters.Add("?Nombre_de_Empleado", MySqlDbType.VarChar, 30).Value = nombreEmpleado;
+            myCommand.Parameters.Add("?Area", MySqlDbType.VarChar, 30).Value = area;
 
-            myCommand.Connection = myConnection;
-            myConnection.Open();
-            myCommand.ExecuteNonQuery();
-            myCommand.Connection.Close();
-
-            MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Agregado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar en la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                myCommand.Connection.Close();
+            }
 
             // Actualizar la tabla después de agregar un nuevo registro
             ActualizarTabla();
@@ -76,6 +94,7 @@ namespace Tienda_Inversiones_Panda
             txtid.Clear();
             txtArea.Clear();
         }
+
 
         private string GenerarCodigoEmpleado()
         {
