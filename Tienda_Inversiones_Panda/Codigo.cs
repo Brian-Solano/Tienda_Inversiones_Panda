@@ -96,6 +96,7 @@ namespace Tienda_Inversiones_Panda
         }
 
 
+
         private string GenerarCodigoEmpleado()
         {
             
@@ -123,6 +124,13 @@ namespace Tienda_Inversiones_Panda
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            // Verificar que se haya seleccionado un registro antes de intentar eliminar
+            if (string.IsNullOrWhiteSpace(txtid.Text))
+            {
+                MessageBox.Show("Por favor, seleccione un registro antes de eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 string myConnectionString = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
@@ -143,29 +151,18 @@ namespace Tienda_Inversiones_Panda
 
                 MessageBox.Show("Eliminado con éxito", "Ok", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
-                string query = "SELECT * FROM code";
-
-                using (MySqlConnection cnn = new MySqlConnection(cad))
-                {
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "inventario");
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "inventario";
-                }
+                // Recargar los datos en el DataGridView después de la eliminación
+                ActualizarTabla();
             }
-
-             catch (MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("No se ha podido hacer la eliminación. Error: " + ex.Message);
             }
 
-             // Limpiar campos de texto
+            // Limpiar campos de texto
             txtNomC.Clear();
             txtid.Clear();
             txtArea.Clear();
-          
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

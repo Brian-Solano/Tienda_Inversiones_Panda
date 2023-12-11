@@ -49,8 +49,10 @@ namespace Tienda_Inversiones_Panda
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Validar que no haya campos vacíos en los campos de texto
-            if (string.IsNullOrWhiteSpace(txtTarea.Text) || string.IsNullOrWhiteSpace(txtEncargado.Text) ||
-                string.IsNullOrWhiteSpace(txtId.Text) || string.IsNullOrWhiteSpace(txtFecha.Text) ||
+            if (string.IsNullOrWhiteSpace(txtTarea.Text) ||
+                string.IsNullOrWhiteSpace(txtEncargado.Text) ||
+                string.IsNullOrWhiteSpace(txtId.Text) ||
+                string.IsNullOrWhiteSpace(txtFecha.Text) ||
                 string.IsNullOrWhiteSpace(txtEstado.Text))
             {
                 MessageBox.Show("No se permiten campos vacíos en los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,13 +92,16 @@ namespace Tienda_Inversiones_Panda
             dataGridView1.DataMember = "inventario";
 
             MessageBox.Show("Se ha Guardado el dato en la tabla");
+
+
         }
+
 
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            // Verificar que se haya seleccionado un ID antes de intentar eliminar
+            // Verificar que se haya seleccionado un registro antes de intentar eliminar
             if (string.IsNullOrWhiteSpace(txtId.Text))
             {
                 MessageBox.Show("Por favor, seleccione un registro antes de eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -129,17 +134,8 @@ namespace Tienda_Inversiones_Panda
                 txtEstado.Clear();
                 txtTarea.Clear();
 
-                string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
-                string query = "SELECT * FROM bitacora";
-
-                using (MySqlConnection cnn = new MySqlConnection(cad))
-                {
-                    MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "inventario");
-                    dataGridView1.DataSource = ds;
-                    dataGridView1.DataMember = "inventario";
-                }
+                // Recargar los datos en el DataGridView después de la eliminación
+                CargarDatosEnDataGridView();
             }
             catch (MySqlException ex)
             {
@@ -147,7 +143,21 @@ namespace Tienda_Inversiones_Panda
             }
         }
 
+        // Función para cargar datos en el DataGridView
+        private void CargarDatosEnDataGridView()
+        {
+            string cad = @"Database=inventario; Data Source=localhost;User id = BrianSolano;Password=12345";
+            string query = "SELECT * FROM bitacora";
 
+            using (MySqlConnection cnn = new MySqlConnection(cad))
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(query, cnn);
+                System.Data.DataSet ds = new System.Data.DataSet();
+                da.Fill(ds, "inventario");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "inventario";
+            }
+        }
 
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -156,7 +166,6 @@ namespace Tienda_Inversiones_Panda
             this.Close();
             formulario.Show();
         }
-
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -175,14 +184,19 @@ namespace Tienda_Inversiones_Panda
                 txtEncargado.Text = encargado;
                 txtEstado.Text = estado;
                 txtId.Text = Id;
+
+                // Agrega código para obtener y mostrar la fecha
+                string fecha = GetCellValue(row, "Fecha");
+                txtFecha.Text = fecha;
             }
         }
 
-        // Método auxiliar para obtener el valor de una celda como cadena
+        // Función para obtener el valor de una celda específica
         private string GetCellValue(DataGridViewRow row, string columnName)
         {
-            return row.Cells[columnName]?.Value?.ToString() ?? string.Empty;
+            return row.Cells[columnName].Value.ToString();
         }
+
 
         private void txtId_TextChanged(object sender, EventArgs e)
         {
