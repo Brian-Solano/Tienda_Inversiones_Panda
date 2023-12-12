@@ -162,5 +162,14 @@
   <ItemGroup>
     <None Include="Resources\panda.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandira.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pandus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

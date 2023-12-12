@@ -47,14 +47,15 @@ namespace Tienda_Inversiones_Panda
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.lblSub = new System.Windows.Forms.Label();
             this.txtSub = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -70,7 +71,7 @@ namespace Tienda_Inversiones_Panda
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 142);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 144);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(658, 136);
             this.dataGridView1.TabIndex = 0;
@@ -79,49 +80,53 @@ namespace Tienda_Inversiones_Panda
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(59, 17);
+            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCliente.Location = new System.Drawing.Point(31, 13);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(142, 13);
+            this.lblCliente.Size = new System.Drawing.Size(199, 18);
             this.lblCliente.TabIndex = 1;
             this.lblCliente.Text = "NOMBRE DEL PRODUCTO";
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(49, 87);
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.Location = new System.Drawing.Point(53, 79);
             this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(62, 13);
+            this.lblFecha.Size = new System.Drawing.Size(82, 18);
             this.lblFecha.TabIndex = 2;
             this.lblFecha.Text = "CANTIDAD";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(309, 84);
+            this.lblPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.Location = new System.Drawing.Point(299, 79);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(47, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(65, 18);
             this.lblPrecio.TabIndex = 3;
             this.lblPrecio.Text = "PRECIO";
             // 
             // lblFactuN
             // 
             this.lblFactuN.AutoSize = true;
-            this.lblFactuN.Location = new System.Drawing.Point(309, 40);
+            this.lblFactuN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFactuN.Location = new System.Drawing.Point(299, 13);
             this.lblFactuN.Name = "lblFactuN";
-            this.lblFactuN.Size = new System.Drawing.Size(64, 13);
+            this.lblFactuN.Size = new System.Drawing.Size(85, 18);
             this.lblFactuN.TabIndex = 4;
             this.lblFactuN.Text = "FACTURA#";
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(62, 45);
+            this.txtCliente.Location = new System.Drawing.Point(34, 45);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(146, 20);
             this.txtCliente.TabIndex = 5;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(392, 80);
+            this.txtPrecio.Location = new System.Drawing.Point(284, 100);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 20);
             this.txtPrecio.TabIndex = 6;
@@ -129,7 +134,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(392, 42);
+            this.txtFactura.Location = new System.Drawing.Point(302, 45);
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.ReadOnly = true;
             this.txtFactura.Size = new System.Drawing.Size(100, 20);
@@ -138,33 +143,36 @@ namespace Tienda_Inversiones_Panda
             // lblSuma
             // 
             this.lblSuma.AutoSize = true;
-            this.lblSuma.Location = new System.Drawing.Point(590, 303);
+            this.lblSuma.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuma.Location = new System.Drawing.Point(385, 302);
             this.lblSuma.Name = "lblSuma";
-            this.lblSuma.Size = new System.Drawing.Size(41, 13);
+            this.lblSuma.Size = new System.Drawing.Size(55, 18);
             this.lblSuma.TabIndex = 9;
             this.lblSuma.Text = "SUMA:";
             // 
             // lbIva
             // 
             this.lbIva.AutoSize = true;
-            this.lbIva.Location = new System.Drawing.Point(590, 345);
+            this.lbIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIva.Location = new System.Drawing.Point(385, 358);
             this.lbIva.Name = "lbIva";
-            this.lbIva.Size = new System.Drawing.Size(27, 13);
+            this.lbIva.Size = new System.Drawing.Size(33, 18);
             this.lbIva.TabIndex = 10;
             this.lbIva.Text = "IVA:";
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(590, 384);
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(530, 302);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(45, 13);
+            this.lblTotal.Size = new System.Drawing.Size(59, 18);
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "TOTAL:";
             // 
             // txtSuma
             // 
-            this.txtSuma.Location = new System.Drawing.Point(646, 300);
+            this.txtSuma.Location = new System.Drawing.Point(371, 332);
             this.txtSuma.Name = "txtSuma";
             this.txtSuma.ReadOnly = true;
             this.txtSuma.Size = new System.Drawing.Size(100, 20);
@@ -172,7 +180,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtIva
             // 
-            this.txtIva.Location = new System.Drawing.Point(646, 342);
+            this.txtIva.Location = new System.Drawing.Point(371, 383);
             this.txtIva.Name = "txtIva";
             this.txtIva.ReadOnly = true;
             this.txtIva.Size = new System.Drawing.Size(100, 20);
@@ -180,7 +188,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(646, 384);
+            this.txtTotal.Location = new System.Drawing.Point(508, 332);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 20);
@@ -216,20 +224,11 @@ namespace Tienda_Inversiones_Panda
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(338, 357);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(713, 12);
+            this.btnAtras.Location = new System.Drawing.Point(721, -1);
             this.btnAtras.Name = "btnAtras";
-            this.btnAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnAtras.Size = new System.Drawing.Size(79, 32);
             this.btnAtras.TabIndex = 19;
             this.btnAtras.Text = "ATRAS";
             this.btnAtras.UseVisualStyleBackColor = true;
@@ -238,15 +237,16 @@ namespace Tienda_Inversiones_Panda
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(513, 45);
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.Location = new System.Drawing.Point(448, 13);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(49, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(69, 18);
             this.lblCodigo.TabIndex = 20;
             this.lblCodigo.Text = "CODIGO";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(593, 45);
+            this.txtCodigo.Location = new System.Drawing.Point(451, 45);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
@@ -254,7 +254,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(117, 84);
+            this.txtCantidad.Location = new System.Drawing.Point(44, 100);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 22;
@@ -262,32 +262,43 @@ namespace Tienda_Inversiones_Panda
             // lblSub
             // 
             this.lblSub.AutoSize = true;
-            this.lblSub.Location = new System.Drawing.Point(513, 84);
+            this.lblSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub.Location = new System.Drawing.Point(448, 79);
             this.lblSub.Name = "lblSub";
-            this.lblSub.Size = new System.Drawing.Size(67, 13);
+            this.lblSub.Size = new System.Drawing.Size(90, 18);
             this.lblSub.TabIndex = 23;
             this.lblSub.Text = "SUB TOTAL";
             // 
             // txtSub
             // 
-            this.txtSub.Location = new System.Drawing.Point(595, 87);
+            this.txtSub.Location = new System.Drawing.Point(438, 100);
             this.txtSub.Name = "txtSub";
             this.txtSub.ReadOnly = true;
             this.txtSub.Size = new System.Drawing.Size(100, 20);
             this.txtSub.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.pandira;
+            this.pictureBox1.Location = new System.Drawing.Point(635, 305);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 133);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
             // 
             // Registro_de_Facturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtSub);
             this.Controls.Add(this.lblSub);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnIngresar);
@@ -309,6 +320,7 @@ namespace Tienda_Inversiones_Panda
             this.Text = "Registro_de_Facturas";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,12 +345,12 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label lblSub;
         private System.Windows.Forms.TextBox txtSub;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

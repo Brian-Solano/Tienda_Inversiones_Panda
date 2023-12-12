@@ -40,39 +40,42 @@ namespace Tienda_Inversiones_Panda
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEmpleados = new System.Windows.Forms.Button();
             this.btnCodigo = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
+            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicio.ForeColor = System.Drawing.Color.Purple;
-            this.lblInicio.Location = new System.Drawing.Point(12, 13);
+            this.lblInicio.Location = new System.Drawing.Point(2, 7);
             this.lblInicio.Name = "lblInicio";
-            this.lblInicio.Size = new System.Drawing.Size(39, 13);
+            this.lblInicio.Size = new System.Drawing.Size(73, 25);
             this.lblInicio.TabIndex = 0;
             this.lblInicio.Text = "INICIO";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(769, 249);
+            this.label2.Location = new System.Drawing.Point(403, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 18);
+            this.label2.Size = new System.Drawing.Size(211, 31);
             this.label2.TabIndex = 1;
             this.label2.Text = "¡BIENVENIDO!";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(679, 317);
+            this.label3.Location = new System.Drawing.Point(213, 289);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(305, 18);
+            this.label3.Size = new System.Drawing.Size(530, 31);
             this.label3.TabIndex = 2;
             this.label3.Text = "SELECCIONE LO QUE DESEE HACER";
             // 
@@ -93,10 +96,11 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnIngresoP.BackColor = System.Drawing.Color.Black;
             this.btnIngresoP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoP.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIngresoP.Location = new System.Drawing.Point(57, 6);
+            this.btnIngresoP.Location = new System.Drawing.Point(81, 8);
             this.btnIngresoP.Name = "btnIngresoP";
-            this.btnIngresoP.Size = new System.Drawing.Size(156, 27);
+            this.btnIngresoP.Size = new System.Drawing.Size(156, 28);
             this.btnIngresoP.TabIndex = 5;
             this.btnIngresoP.Text = "INGRESO DE PRODUCTOS";
             this.btnIngresoP.UseVisualStyleBackColor = false;
@@ -106,7 +110,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnRegistroF.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegistroF.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRegistroF.Location = new System.Drawing.Point(541, 6);
+            this.btnRegistroF.Location = new System.Drawing.Point(573, 6);
             this.btnRegistroF.Name = "btnRegistroF";
             this.btnRegistroF.Size = new System.Drawing.Size(150, 30);
             this.btnRegistroF.TabIndex = 7;
@@ -118,7 +122,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnIngresarU.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresarU.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIngresarU.Location = new System.Drawing.Point(878, 12);
+            this.btnIngresarU.Location = new System.Drawing.Point(879, 6);
             this.btnIngresarU.Name = "btnIngresarU";
             this.btnIngresarU.Size = new System.Drawing.Size(159, 30);
             this.btnIngresarU.TabIndex = 4;
@@ -131,7 +135,7 @@ namespace Tienda_Inversiones_Panda
             this.btnBitacora.BackColor = System.Drawing.Color.Black;
             this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBitacora.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnBitacora.Location = new System.Drawing.Point(409, 6);
+            this.btnBitacora.Location = new System.Drawing.Point(436, 6);
             this.btnBitacora.Name = "btnBitacora";
             this.btnBitacora.Size = new System.Drawing.Size(99, 30);
             this.btnBitacora.TabIndex = 8;
@@ -143,7 +147,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClientes.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClientes.Location = new System.Drawing.Point(219, 9);
+            this.btnClientes.Location = new System.Drawing.Point(243, 9);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(75, 23);
             this.btnClientes.TabIndex = 9;
@@ -155,7 +159,7 @@ namespace Tienda_Inversiones_Panda
             // 
             this.btnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEmpleados.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEmpleados.Location = new System.Drawing.Point(300, 10);
+            this.btnEmpleados.Location = new System.Drawing.Point(338, 10);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Size = new System.Drawing.Size(92, 22);
             this.btnEmpleados.TabIndex = 10;
@@ -166,8 +170,9 @@ namespace Tienda_Inversiones_Panda
             // btnCodigo
             // 
             this.btnCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCodigo.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCodigo.Location = new System.Drawing.Point(729, 7);
+            this.btnCodigo.Location = new System.Drawing.Point(738, 7);
             this.btnCodigo.Name = "btnCodigo";
             this.btnCodigo.Size = new System.Drawing.Size(116, 29);
             this.btnCodigo.TabIndex = 11;
@@ -175,12 +180,22 @@ namespace Tienda_Inversiones_Panda
             this.btnCodigo.UseVisualStyleBackColor = true;
             this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Tienda_Inversiones_Panda.Properties.Resources.pandes;
+            this.pictureBox2.Location = new System.Drawing.Point(796, 169);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(283, 251);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.panda;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 187);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 453);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(556, 238);
+            this.pictureBox1.Size = new System.Drawing.Size(346, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
@@ -191,6 +206,7 @@ namespace Tienda_Inversiones_Panda
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1173, 593);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCodigo);
             this.Controls.Add(this.btnEmpleados);
@@ -206,6 +222,7 @@ namespace Tienda_Inversiones_Panda
             this.Name = "Menu_Principal";
             this.Text = "Menu_Principal";
             this.Load += new System.EventHandler(this.Menu_Principal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,5 +243,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.Button btnEmpleados;
         private System.Windows.Forms.Button btnCodigo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

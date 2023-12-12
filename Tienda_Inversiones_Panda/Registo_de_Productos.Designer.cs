@@ -48,12 +48,14 @@ namespace Tienda_Inversiones_Panda
             this.RavNombre = new System.Windows.Forms.RadioButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnatras
             // 
-            this.btnatras.Location = new System.Drawing.Point(689, 353);
+            this.btnatras.Location = new System.Drawing.Point(904, 8);
             this.btnatras.Name = "btnatras";
             this.btnatras.Size = new System.Drawing.Size(108, 26);
             this.btnatras.TabIndex = 0;
@@ -74,27 +76,30 @@ namespace Tienda_Inversiones_Panda
             // lblNombreP
             // 
             this.lblNombreP.AutoSize = true;
-            this.lblNombreP.Location = new System.Drawing.Point(86, 109);
+            this.lblNombreP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreP.Location = new System.Drawing.Point(22, 111);
             this.lblNombreP.Name = "lblNombreP";
-            this.lblNombreP.Size = new System.Drawing.Size(142, 13);
+            this.lblNombreP.Size = new System.Drawing.Size(199, 18);
             this.lblNombreP.TabIndex = 2;
             this.lblNombreP.Text = "NOMBRE DEL PRODUCTO";
             // 
             // lblDistribuidor
             // 
             this.lblDistribuidor.AutoSize = true;
-            this.lblDistribuidor.Location = new System.Drawing.Point(86, 171);
+            this.lblDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDistribuidor.Location = new System.Drawing.Point(23, 170);
             this.lblDistribuidor.Name = "lblDistribuidor";
-            this.lblDistribuidor.Size = new System.Drawing.Size(85, 13);
+            this.lblDistribuidor.Size = new System.Drawing.Size(113, 18);
             this.lblDistribuidor.TabIndex = 3;
             this.lblDistribuidor.Text = "DISTRIBUIDOR";
             // 
             // lbldispo
             // 
             this.lbldispo.AutoSize = true;
-            this.lbldispo.Location = new System.Drawing.Point(86, 238);
+            this.lbldispo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldispo.Location = new System.Drawing.Point(23, 233);
             this.lbldispo.Name = "lbldispo";
-            this.lbldispo.Size = new System.Drawing.Size(78, 13);
+            this.lbldispo.Size = new System.Drawing.Size(106, 18);
             this.lbldispo.TabIndex = 5;
             this.lbldispo.Text = "DISPONIBLES";
             // 
@@ -164,9 +169,10 @@ namespace Tienda_Inversiones_Panda
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(86, 293);
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.Location = new System.Drawing.Point(22, 296);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.Size = new System.Drawing.Size(26, 20);
             this.lblID.TabIndex = 16;
             this.lblID.Text = "ID";
             // 
@@ -192,9 +198,10 @@ namespace Tienda_Inversiones_Panda
             // RavId
             // 
             this.RavId.AutoSize = true;
+            this.RavId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RavId.Location = new System.Drawing.Point(488, 39);
             this.RavId.Name = "RavId";
-            this.RavId.Size = new System.Drawing.Size(36, 17);
+            this.RavId.Size = new System.Drawing.Size(39, 20);
             this.RavId.TabIndex = 19;
             this.RavId.TabStop = true;
             this.RavId.Text = "ID";
@@ -204,9 +211,10 @@ namespace Tienda_Inversiones_Panda
             // RavNombre
             // 
             this.RavNombre.AutoSize = true;
+            this.RavNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RavNombre.Location = new System.Drawing.Point(488, 74);
             this.RavNombre.Name = "RavNombre";
-            this.RavNombre.Size = new System.Drawing.Size(62, 17);
+            this.RavNombre.Size = new System.Drawing.Size(75, 20);
             this.RavNombre.TabIndex = 20;
             this.RavNombre.TabStop = true;
             this.RavNombre.Text = "Nombre";
@@ -224,17 +232,29 @@ namespace Tienda_Inversiones_Panda
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(629, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 22;
             this.label1.Text = "BUSCADOR";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.panda;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 398);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // Registo_de_Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 459);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.RavNombre);
@@ -258,6 +278,7 @@ namespace Tienda_Inversiones_Panda
             this.Text = "Registo_de_Productos";
             this.Load += new System.EventHandler(this.Registo_de_Productos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +305,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

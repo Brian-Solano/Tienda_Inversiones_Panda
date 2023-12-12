@@ -46,66 +46,74 @@ namespace Tienda_Inversiones_Panda
             this.txtArea = new System.Windows.Forms.TextBox();
             this.txtid = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(53, 39);
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(97, 20);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(54, 13);
+            this.lblNombre.Size = new System.Drawing.Size(75, 18);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "NOMBRE";
             // 
             // lblTurno
             // 
             this.lblTurno.AutoSize = true;
-            this.lblTurno.Location = new System.Drawing.Point(53, 89);
+            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurno.Location = new System.Drawing.Point(97, 84);
             this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(67, 13);
+            this.lblTurno.Size = new System.Drawing.Size(91, 18);
             this.lblTurno.TabIndex = 1;
             this.lblTurno.Text = "TURNO DE ";
             // 
             // lblArea
             // 
             this.lblArea.AutoSize = true;
-            this.lblArea.Location = new System.Drawing.Point(53, 153);
+            this.lblArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArea.Location = new System.Drawing.Point(97, 141);
             this.lblArea.Name = "lblArea";
-            this.lblArea.Size = new System.Drawing.Size(36, 13);
+            this.lblArea.Size = new System.Drawing.Size(47, 18);
             this.lblArea.TabIndex = 2;
             this.lblArea.Text = "AREA";
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(329, 39);
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.Location = new System.Drawing.Point(387, 20);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(59, 13);
+            this.lblApellido.Size = new System.Drawing.Size(79, 18);
             this.lblApellido.TabIndex = 3;
             this.lblApellido.Text = "APELLIDO";
             // 
             // lblA
             // 
             this.lblA.AutoSize = true;
-            this.lblA.Location = new System.Drawing.Point(329, 89);
+            this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(418, 84);
             this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(14, 13);
+            this.lblA.Size = new System.Drawing.Size(17, 18);
             this.lblA.TabIndex = 4;
             this.lblA.Text = "A";
             // 
             // lblCod
             // 
             this.lblCod.AutoSize = true;
-            this.lblCod.Location = new System.Drawing.Point(52, 391);
+            this.lblCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCod.Location = new System.Drawing.Point(397, 141);
             this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(49, 13);
+            this.lblCod.Size = new System.Drawing.Size(69, 18);
             this.lblCod.TabIndex = 5;
             this.lblCod.Text = "CODIGO";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(332, 169);
+            this.btnGuardar.Location = new System.Drawing.Point(194, 237);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 6;
@@ -115,7 +123,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(433, 169);
+            this.btnEliminar.Location = new System.Drawing.Point(391, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(75, 23);
             this.btnEliminar.TabIndex = 7;
@@ -125,7 +133,7 @@ namespace Tienda_Inversiones_Panda
             // 
             // btnAtras
             // 
-            this.btnAtras.Location = new System.Drawing.Point(615, 169);
+            this.btnAtras.Location = new System.Drawing.Point(723, 1);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(75, 23);
             this.btnAtras.TabIndex = 8;
@@ -136,56 +144,56 @@ namespace Tienda_Inversiones_Panda
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 215);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 276);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(635, 152);
             this.dataGridView1.TabIndex = 9;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(56, 55);
+            this.txtNombre.Location = new System.Drawing.Point(55, 41);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(198, 20);
             this.txtNombre.TabIndex = 10;
             // 
             // txtTurno
             // 
-            this.txtTurno.Location = new System.Drawing.Point(56, 116);
+            this.txtTurno.Location = new System.Drawing.Point(55, 105);
             this.txtTurno.Name = "txtTurno";
             this.txtTurno.Size = new System.Drawing.Size(198, 20);
             this.txtTurno.TabIndex = 12;
             // 
             // txtTurno1
             // 
-            this.txtTurno1.Location = new System.Drawing.Point(332, 116);
+            this.txtTurno1.Location = new System.Drawing.Point(332, 105);
             this.txtTurno1.Name = "txtTurno1";
             this.txtTurno1.Size = new System.Drawing.Size(198, 20);
             this.txtTurno1.TabIndex = 13;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(332, 55);
+            this.txtApellido.Location = new System.Drawing.Point(332, 41);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(198, 20);
             this.txtApellido.TabIndex = 14;
             // 
             // txtArea
             // 
-            this.txtArea.Location = new System.Drawing.Point(56, 169);
+            this.txtArea.Location = new System.Drawing.Point(55, 171);
             this.txtArea.Name = "txtArea";
             this.txtArea.Size = new System.Drawing.Size(198, 20);
             this.txtArea.TabIndex = 15;
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(118, 388);
+            this.txtid.Location = new System.Drawing.Point(362, 171);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(198, 20);
+            this.txtid.Size = new System.Drawing.Size(126, 20);
             this.txtid.TabIndex = 16;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(525, 169);
+            this.btnModificar.Location = new System.Drawing.Point(294, 237);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 17;
@@ -193,11 +201,22 @@ namespace Tienda_Inversiones_Panda
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Tienda_Inversiones_Panda.Properties.Resources.pandes;
+            this.pictureBox1.Location = new System.Drawing.Point(568, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(149, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtid);
             this.Controls.Add(this.txtArea);
@@ -219,6 +238,7 @@ namespace Tienda_Inversiones_Panda
             this.Text = "Empleado";
             this.Load += new System.EventHandler(this.Empleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +263,6 @@ namespace Tienda_Inversiones_Panda
         private System.Windows.Forms.TextBox txtArea;
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
